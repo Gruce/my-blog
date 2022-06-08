@@ -11,9 +11,9 @@ const { data, pending, error, refresh } = await useFetch(
 
 <template>
   <div class="flex gap-6 rounded-lg" v-if="data">
-    <img width="150" class="m-0 rounded-lg" :src="data.avatar_url" alt="Gruce Github">
+    <img class="w-24 m-0 rounded-lg sm:w-40" :src="data.avatar_url" alt="Gruce Github">
     <div class="flex flex-col gap-1">
-        <div class="mb-1 text-2xl ">
+        <div class="mb-1 text-lg sm:text-2xl">
             <span class="font-semibold">{{data.name}}</span>
             <span class="ml-2 text-gray-400">( {{data.login}} )</span>
         </div>
