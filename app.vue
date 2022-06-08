@@ -1,7 +1,7 @@
 <template>
   <Html lang="en" />
   <Meta property="og:image" content="/cover.jpg" />
-  <Meta name="twitter:card" content="summary_large_image" />
+  <Meta name="twitter:card" content="/cover.jpg" />
   <div class="flex justify-center py-10">
     <img v-if="colorMode.preference === 'dark'" src="/logo-dark.png" class="rounded-lg" width="90" />
     <img v-else src="/logo.png" class="rounded-lg" width="90" />
