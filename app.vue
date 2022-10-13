@@ -7,7 +7,7 @@
     <img v-else src="/logo.png" class="rounded-lg" width="90" />
   </div>
   <Navbar />
-  <div class="max-w-2xl px-4 py-10 m-auto bg-white sm:px-8 sm:shadow dark:bg-gray-800 sm:rounded">
+  <div class="max-w-2xl px-4 py-10 m-auto bg-white sm:px-8 sm:shadow dark:bg-white dark:bg-opacity-10 sm:rounded">
     <NuxtPage />
   </div>
 </template>
@@ -18,6 +18,6 @@ const colorMode = useColorMode();
 
 <style lang="postcss">
 body {
-  @apply bg-gray-50 dark:bg-gray-900;
+  @apply bg-gray-50 dark:bg-black;
 }
 </style>
