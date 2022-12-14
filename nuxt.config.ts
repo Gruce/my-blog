@@ -1,24 +1,20 @@
-import { defineNuxtConfig } from 'nuxt'
+import transformerDirective from '@unocss/transformer-directives'
 
-// https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
+// https://v3.nuxtjs.org/api/configuration/nuxt.config
+
 export default defineNuxtConfig({
+  extends: ['content-wind', '@nuxt-themes/typography'],
+
+  css: ['@/assets/style.scss'],
+
   modules: [
-    '@nuxt/content',
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/color-mode'
+    '@unocss/nuxt',
   ],
-  // https://color-mode.nuxtjs.org
-  colorMode: {
-    classSuffix: ''
+
+  unocss: {
+    transformers: [
+      transformerDirective(),
+    ],
   },
-  // https://content.nuxtjs.org
-  content: {
-    navigation: {
-      fields: ['navTitle']
-    },
-    highlight: {
-      // See the available themes on https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-theme
-      theme: 'github-dark'
-    }
-  }
+
 })

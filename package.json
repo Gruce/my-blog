@@ -5,17 +5,17 @@
     "build": "nuxi build",
     "generate": "nuxi generate",
     "preview": "nuxi preview",
-    "lint": "eslint ."
+    "postinstall": "nuxi prepare"
   },
   "devDependencies": {
-    "@iconify/vue": "^3.2.1",
-    "@nuxt/content": "^2.0.0",
-    "@nuxtjs/color-mode": "^3.0.3",
-    "@nuxtjs/eslint-config-typescript": "^10.0.0",
-    "@nuxtjs/tailwindcss": "^5.1.2",
-    "@tailwindcss/typography": "^0.5.2",
-    "eslint": "^8.16.0",
-    "nuxt": "^3.0.0-rc.11",
-    "typescript": "^4.7.2"
+    "@nuxt-themes/typography": "^0.1.4",
+    "@unocss/nuxt": "^0.47.6",
+    "content-wind": "^0.3.2",
+    "nuxt": "^3.0.0",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "pinceau": "^0.8.9",
+    "sass": "^1.56.2"
   }
 }
