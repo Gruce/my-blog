@@ -9,6 +9,7 @@ export default defineNuxtConfig({
 
   modules: [
     '@unocss/nuxt',
+    '@nuxthq/studio'
   ],
 
   unocss: {
