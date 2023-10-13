@@ -9,9 +9,10 @@
   },
   "devDependencies": {
     "@nuxt-themes/typography": "^0.1.4",
+    "@nuxthq/studio": "^1.0.1",
     "@unocss/nuxt": "^0.47.6",
     "content-wind": "^0.3.2",
-    "nuxt": "^3.0.0",
+    "nuxt": "^3.7.4",
     "typescript": "^4.9.3"
   },
   "dependencies": {
