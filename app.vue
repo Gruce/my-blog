@@ -31,7 +31,7 @@ const activeGroup = ref(1)
 <style>
 body {
   font-family: "IBM Plex Mono", monospace;
-  background-color: black;
+  /* background-color: black; */
   color: white;
   padding: 20px;
 }
