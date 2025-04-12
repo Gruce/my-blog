@@ -14,10 +14,19 @@
         position: 'absolute',
         top: `${currentPosition.y}px`,
         left: `${currentPosition.x}px`,
-        transition: 'top 0.3s ease, left 0.3s ease', // Faster transition: 0.5s → 0.3s
+        transition: 'top 0.2s ease, left 0.2s ease', // Faster transition: 0.5s → 0.3s
       }" class="flex justify-center items-center z-[10]">
 
-        <div class="absolute w-8 md:w-16 h-8 md:h-16 text-white">SSSS</div>
+        <div class="text-white">
+          <!-- Top - Right -->
+          <div v-if="activeGroup == 3">Projects</div>
+          <!-- Bottom - Right -->
+          <div v-if="activeGroup == 2">DUDES Studio</div>
+          <!-- Bottom - Left -->
+          <div v-if="activeGroup == 1">Test 3</div>
+          <!-- Top - Left -->
+          <div v-if="activeGroup == 0">Test 4</div>
+        </div>
       </div>
 
       <div v-for="square in childSquares" class="absolute border border-slate-500 rotate-45" :style="{
@@ -45,7 +54,14 @@ const activeGroup = defineModel({
   type: Number,
 })
 
-const parentSize = computed(() => mobile.value ? 256 : 384);
+const props = defineProps({
+  size: {
+    type: Number,
+    required: true,
+  },
+})
+
+const parentSize = computed(() => props.size);
 const rotatedSquareSize = computed(() => (parentSize.value / 2) / Math.sqrt(2));
 
 // Add a computed property for the square color based on activeGroup
@@ -177,8 +193,8 @@ const prepareNextGroup = () => {
           activeGroup.value = targetGroup.value;
           targetGroup.value = null;
         }
-      }, 300); // Faster timeout: 550ms → 300ms
-    }, 300); // Faster timeout: 550ms → 300ms
+      }, 200); // Faster timeout: 550ms → 200ms
+    }, 200); // Faster timeout: 550ms → 300ms
   } else {
     // Direct movement (adjacent cells)
     currentPosition.value = targetPos;
@@ -194,7 +210,7 @@ const prepareNextGroup = () => {
         activeGroup.value = targetGroup.value;
         targetGroup.value = null;
       }
-    }, 300); // Faster timeout: 550ms → 300ms
+    }, 200); // Faster timeout: 550ms → 300ms
   }
 }
 
