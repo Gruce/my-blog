@@ -6,20 +6,51 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxtjs/tailwindcss',
     '@nuxt/content',
-    // '@nuxtjs/sitemap',
     '@nuxt/icon',
     '@nuxtjs/robots',
+    'nuxt-llms',
   ],
   runtimeConfig: {
     public: {
       siteUrl: 'https://gruceing.dev'
     }
   },
-  // sitemap: {
-  //   defaults: { changefreq: 'weekly', priority: 0.6 },
-  // },
   robots: {
     groups: [{ userAgent: '*', allow: '/' }]
+  },
+  llms: {
+    domain: 'https://gruceing.dev',
+    title: 'Hassan K. Al-Khalidi (gruceing) - Engineering, Design & Events',
+    description: 'Software engineer, technical writer, and developer advocate specializing in modern web technologies and engineering practices.',
+    sections: [
+      {
+        title: 'Engineering Articles',
+        description: 'Technical insights, architecture patterns, and best practices for software engineering',
+        contentCollection: 'blog',
+        contentFilters: [
+          { field: 'category', operator: '=', value: 'tech' },
+          { field: 'extension', operator: '=', value: 'md' }
+        ]
+      },
+      {
+        title: 'Design Content',
+        description: 'User experience principles, design systems, and interface design insights',
+        contentCollection: 'blog',
+        contentFilters: [
+          { field: 'category', operator: '=', value: 'design' },
+          { field: 'extension', operator: '=', value: 'md' }
+        ]
+      },
+      {
+        title: 'Event Coverage',
+        description: 'Conference insights, workshops, and industry events coverage',
+        contentCollection: 'blog',
+        contentFilters: [
+          { field: 'category', operator: '=', value: 'events' },
+          { field: 'extension', operator: '=', value: 'md' }
+        ]
+      }
+    ]
   },
   nitro: {
     preset: 'cloudflare_pages',

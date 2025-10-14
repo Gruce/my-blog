@@ -15,6 +15,7 @@ import ProseImg from '../components/content/ProseImg.vue'
 import ProseStrong from '../components/content/ProseStrong.vue'
 import ProseEm from '../components/content/ProseEm.vue'
 import ProseMermaid from '../components/content/ProseMermaid.vue'
+import ImageCarousel from '../components/ImageCarousel.vue'
 
 const route = useRoute()
 const { data: page } = await useAsyncData(route.path, () => {
@@ -89,7 +90,10 @@ useSeoMeta({
   ogDescription: () => page.value?.description || page.value?.title,
   ogType: 'article',
   ogImage: () => page.value?.image,
-  twitterCard: 'summary_large_image'
+  twitterCard: 'summary_large_image',
+  author: () => page.value?.author || 'Hassan K. Al-Khalidi',
+  twitterCreator: '@gruceing',
+  twitterSite: '@gruceing'
 })
 
 useHead(() => ({
@@ -103,8 +107,27 @@ useHead(() => ({
         description: page.value?.description || page.value?.title,
         image: page.value?.image ? [page.value.image] : undefined,
         datePublished: page.value?.date,
-        author: [{ '@type': 'Person', name: 'Hassan K. Al-Khalidi' }],
+        author: {
+          '@type': 'Person',
+          name: page.value?.author || 'Hassan K. Al-Khalidi',
+          alternateName: page.value?.authorAlternateNames || ['Hassan Alkhalidi', 'حسن الخالدي', 'حسن', 'حسن خالد', 'gruce', 'gruceing'],
+          url: siteUrl,
+          sameAs: [
+            'https://github.com/gruce',
+            'https://instagram.com/gruceing',
+            'https://www.linkedin.com/in/gruceing/'
+          ],
+          jobTitle: 'Software Engineer & Technical Writer',
+          description: 'Hassan K. Al-Khalidi (gruceing) - Software engineer, technical writer, and developer advocate specializing in modern web technologies and engineering practices.'
+        },
+        publisher: {
+          '@type': 'Person',
+          name: 'Hassan K. Al-Khalidi',
+          alternateName: ['gruceing', 'حسن الخالدي']
+        },
         mainEntityOfPage: siteUrl + (page.value?.path || ''),
+        keywords: page.value?.tags?.join(', ') || '',
+        inLanguage: 'en'
       })
     }
   ]
@@ -173,7 +196,8 @@ useHead(() => ({
           img: ProseImg,
           strong: ProseStrong,
           em: ProseEm,
-          mermaid: ProseMermaid
+          mermaid: ProseMermaid,
+          ImageCarousel: ImageCarousel
         }"
       />
     </article>

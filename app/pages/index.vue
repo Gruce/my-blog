@@ -10,6 +10,12 @@
         <div>
           <h1 class="text-2xl font-medium tracking-tight text-white/95">Hassan K. Al-Khalidi</h1>
           <p class="text-zinc-400 mt-1 text-sm">Engineering, design, and events.</p>
+          <NuxtLink 
+            to="/about" 
+            class="inline-block mt-2 text-xs text-zinc-500 hover:text-zinc-300 transition-colors duration-200"
+          >
+            About →
+          </NuxtLink>
         </div>
       </div>
     </header>
@@ -100,12 +106,16 @@ const filtered = computed(() => {
 })
 
 useSeoMeta({
-  title: 'Hassan K. Al-Khalidi — Blog',
-  ogTitle: 'Hassan K. Al-Khalidi — Blog',
-  description: 'Engineering, design, and events from Hassan K. Al-Khalidi.',
-  ogDescription: 'Engineering, design, and events from Hassan K. Al-Khalidi.',
+  title: 'Hassan K. Al-Khalidi (gruceing) — Engineering, Design & Events',
+  ogTitle: 'Hassan K. Al-Khalidi (gruceing) — Engineering, Design & Events',
+  description: 'Hassan K. Al-Khalidi (gruceing) - Software engineer, technical writer, and developer advocate. Engineering insights, design principles, and event coverage.',
+  ogDescription: 'Hassan K. Al-Khalidi (gruceing) - Software engineer, technical writer, and developer advocate. Engineering insights, design principles, and event coverage.',
   ogType: 'website',
-  twitterCard: 'summary_large_image'
+  twitterCard: 'summary_large_image',
+  author: 'Hassan K. Al-Khalidi',
+  twitterCreator: '@gruceing',
+  twitterSite: '@gruceing',
+  keywords: 'Hassan K. Al-Khalidi, Hassan Alkhalidi, حسن الخالدي, حسن, حسن خالد, gruce, gruceing, software engineering, technical writing, web development, frontend architecture, engineering culture'
 })
 
 useHead(() => ({
@@ -114,9 +124,47 @@ useHead(() => ({
       type: 'application/ld+json',
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
-        '@type': 'CollectionPage',
-        name: 'Blog',
-        numberOfItems: posts.value?.length || 0
+        '@type': 'Person',
+        name: 'Hassan K. Al-Khalidi',
+        alternateName: ['Hassan Alkhalidi', 'حسن الخالدي', 'حسن', 'حسن خالد', 'gruce', 'gruceing'],
+        url: 'https://gruceing.dev',
+        sameAs: [
+          'https://github.com/gruce',
+          'https://instagram.com/gruceing',
+          'https://www.linkedin.com/in/gruceing/'
+        ],
+        jobTitle: 'Software Engineer & Technical Writer',
+        description: 'Hassan K. Al-Khalidi (gruceing) - Software engineer, technical writer, and developer advocate specializing in modern web technologies and engineering practices.',
+        image: 'https://gruceing.dev/hassan-alkhalidi.jpg',
+        knowsAbout: ['Software Engineering', 'Web Development', 'Frontend Architecture', 'Technical Writing', 'Engineering Culture', 'Design Systems'],
+        alumniOf: 'Software Engineering',
+        hasOccupation: {
+          '@type': 'Occupation',
+          name: 'Software Engineer',
+          description: 'Full-stack developer specializing in modern web technologies'
+        }
+      })
+    },
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Blog',
+        name: 'Hassan K. Al-Khalidi Blog',
+        description: 'Engineering insights, design principles, and event coverage from Hassan K. Al-Khalidi (gruceing)',
+        url: 'https://gruceing.dev',
+        author: {
+          '@type': 'Person',
+          name: 'Hassan K. Al-Khalidi',
+          alternateName: ['gruceing', 'حسن الخالدي']
+        },
+        publisher: {
+          '@type': 'Person',
+          name: 'Hassan K. Al-Khalidi',
+          alternateName: ['gruceing', 'حسن الخالدي']
+        },
+        numberOfItems: posts.value?.length || 0,
+        inLanguage: 'en'
       })
     }
   ]

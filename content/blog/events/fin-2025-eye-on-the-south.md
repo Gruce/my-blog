@@ -15,6 +15,7 @@ The conference brought together government leaders, business executives, and inn
 
 *FIN 2025 Eye on the South conference attendees representing government, business, and innovation sectors from across Iraq and the region.*
 
+
 ## Table of Contents
 
 1. [The Vision: A New Kind of Alignment](#the-vision-a-new-kind-of-alignment)
@@ -79,6 +80,11 @@ Behind every infrastructure project lies a human story. The conference emphasize
 - **Skills Development**: Training programs that match local needs with market opportunities
 - **Entrepreneurship Support**: Incubators and accelerators that help local businesses grow
 - **Cultural Preservation**: Ensuring development respects and enhances local culture and heritage
+
+::ImageCarousel{:images='["/fin25/fin-2025-conference-networking-session.jpeg", "/fin25/fin-2025-conference-collaborative-discussion.jpeg", "/fin25/fin-2025-conference-participants-gathering.jpeg", "/fin25/fin-2025-conference-innovation-workshop.jpeg", "/fin25/fin-2025-conference-leadership-panel.jpeg"]'}
+::
+
+*Conference moments: networking sessions, collaborative discussions, and the vibrant atmosphere that brought together leaders from across Iraq and the region.*
 
 ## Why Basra Matters: The Gateway to the Future
 

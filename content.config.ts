@@ -12,7 +12,9 @@ export default defineContentConfig({
         image: z.string(),
         date: z.date(),
         category: z.enum(['tech', 'design', 'events']).optional().default('tech'),
-        description: z.string().optional()
+        description: z.string().optional(),
+        author: z.string().optional().default('Hassan K. Al-Khalidi'),
+        authorAlternateNames: z.array(z.string()).optional().default(['Hassan Alkhalidi', 'حسن الخالدي', 'حسن', 'حسن خالد', 'gruce', 'gruceing'])
       })
     })
   }
