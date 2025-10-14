@@ -9,7 +9,7 @@
         />
         <div>
           <h1 class="text-2xl font-medium tracking-tight text-white/95">Hassan K. Al-Khalidi</h1>
-          <p class="text-zinc-400 mt-1 text-sm">Engineering, design, and events.</p>
+          <p class="text-zinc-400 mt-1 text-sm">CEO, DUDES Studio • Co-Founder, Enab عنب</p>
           <NuxtLink 
             to="/about" 
             class="inline-block mt-2 text-xs text-zinc-500 hover:text-zinc-300 transition-colors duration-200"

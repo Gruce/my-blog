@@ -18,9 +18,29 @@
     <div class="space-y-8">
       <div>
         <p class="text-zinc-300 leading-relaxed">
-          I'm a software engineer passionate about building things that matter. 
-          I write about engineering, design, and the events that shape our industry.
+          I'm a software engineer and entrepreneur from Basra, Iraq. Currently serving as CEO of DUDES Studio and co-founder of Enab عنب, 
+          I bridge the gap between technology and traditional industries like oil & gas.
         </p>
+        <p class="text-zinc-300 leading-relaxed mt-4">
+          With a background in both computer science and petroleum engineering, I've built systems ranging from GPS tracking solutions 
+          to financial management platforms using Laravel, Vue.js, and Nuxt.js.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-medium text-white/95 mb-4">Background</h2>
+        <div class="space-y-4">
+          <div>
+            <h3 class="text-lg font-medium text-white/90">Education</h3>
+            <p class="text-zinc-400 text-sm">Computer Science, University of Basrah (1st in class, 2023)</p>
+            <p class="text-zinc-400 text-sm">Oil Analysis, Basra Oil Technical Institute (5th in class, 2019)</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-medium text-white/90">Current Roles</h3>
+            <p class="text-zinc-400 text-sm">CEO, DUDES Studio (2024 - Present)</p>
+            <p class="text-zinc-400 text-sm">Co-Founder, Enab عنب (2023 - Present)</p>
+          </div>
+        </div>
       </div>
 
       <div>
@@ -65,8 +85,8 @@
       <div>
         <h2 class="text-xl font-medium text-white/95 mb-4">About this blog</h2>
         <p class="text-zinc-300 leading-relaxed">
-          I write about engineering practices, design principles, and share insights from events I attend. 
-          The goal is to share knowledge and learn from the community.
+          I write about the intersection of technology and traditional industries, engineering practices, and insights from events I attend. 
+          Having worked in both oil & gas and software development, I share perspectives on how technology can transform established sectors.
         </p>
       </div>
     </div>
