@@ -62,6 +62,16 @@
 </template>
 
 <script setup lang="ts">
+// SEO meta tags for homepage
+useSeoMeta({
+  title: 'Hassan K. Al-Khalidi (gruceing)',
+  ogTitle: 'Hassan K. Al-Khalidi (gruceing)',
+  description: 'Software engineer, technical writer, and developer advocate specializing in modern web technologies and engineering practices.',
+  ogDescription: 'Software engineer, technical writer, and developer advocate specializing in modern web technologies and engineering practices.',
+  ogImage: '/hassan-alkhalidi.jpg',
+  twitterCard: 'summary_large_image'
+})
+
 type PostItem = { id: string; path: string; title: string; date?: string | Date; category?: 'tech' | 'design' | 'events' }
 const { data: posts } = await useAsyncData<PostItem[]>('blog', async () => {
   const list = await queryCollection('blog').order('date', 'DESC').all()

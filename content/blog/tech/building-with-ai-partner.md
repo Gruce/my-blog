@@ -4,6 +4,28 @@ title: "Building with AI: A Complete Guide to Human-AI Collaboration in Software
 tags: [ai, teams, workflow, productivity]
 category: tech
 description: "Master the art of human-AI collaboration in software development. Learn proven frameworks, real-world patterns, and practical strategies for leveraging AI as your coding partner while maintaining quality and control."
+ogImage:
+  component: BlogPost
+  props:
+    title: "Building with AI: A Complete Guide to Human-AI Collaboration"
+    description: "Master the art of human-AI collaboration in software development. Learn proven frameworks, real-world patterns, and practical strategies."
+    author: "Hassan K. Al-Khalidi"
+    category: "tech"
+    date: "Jun 06, 2025"
+    readingTime: 12
+sitemap:
+  lastmod: 2025-06-06
+robots: index, follow
+schemaOrg:
+  - "@type": "Article"
+    headline: "Building with AI: A Complete Guide to Human-AI Collaboration in Software Development"
+    author:
+      type: "Person"
+      name: "Hassan K. Al-Khalidi"
+    datePublished: "2025-06-06"
+    dateModified: "2025-06-06"
+    description: "Master the art of human-AI collaboration in software development. Learn proven frameworks, real-world patterns, and practical strategies for leveraging AI as your coding partner while maintaining quality and control."
+    keywords: ["AI", "software development", "collaboration", "productivity", "workflow"]
 ---
 
 The future of software development isn't about replacing developers with AI—it's about creating powerful partnerships that amplify human creativity and expertise. After working with AI tools across multiple projects and teams, I've learned that the most successful developers treat AI not as a replacement, but as an intelligent junior teammate with superpowers.

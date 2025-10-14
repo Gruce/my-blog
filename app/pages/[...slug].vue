@@ -18,9 +18,20 @@ import ProseMermaid from '../components/content/ProseMermaid.vue'
 import ImageCarousel from '../components/ImageCarousel.vue'
 
 const route = useRoute()
-const { data: page } = await useAsyncData(route.path, () => {
+const { data: page } = await useAsyncData(`page-${route.path}`, () => {
   return queryCollection('blog').path(route.path).first()
 })
+
+// Nuxt SEO integration
+if (page.value?.ogImage) {
+  useSeoMeta({
+    ogImage: page.value.ogImage,
+    twitterImage: page.value.ogImage
+  })
+}
+// Ensure the schema.org is rendered
+useHead(page.value?.head || {})
+useSeoMeta(page.value?.seo || {})
 
 
 const siteUrl = useRuntimeConfig().public?.siteUrl || ''

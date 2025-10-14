@@ -67,5 +67,10 @@ export default defineNuxtConfig({
     markdown: {
       mdc: true
     }
+  }, 
+
+  site: {
+    url: 'https://gruceing.dev',
+    name: 'Hassan K. Al-Khalidi (gruceing)'
   }
 })

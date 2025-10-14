@@ -4,6 +4,15 @@ title: "Cloudflare Edge Patterns: Building Lightning-Fast Applications with Glob
 tags: [edge, performance, latency, cloudflare, cdn]
 category: tech
 description: "Master Cloudflare's edge computing platform with proven patterns for caching, security, and performance. Learn how to build applications that feel instant worldwide while reducing costs and complexity."
+ogImage:
+  component: BlogPost
+  props:
+    title: "Cloudflare Edge Patterns: Building Lightning-Fast Applications"
+    description: "Master Cloudflare's edge computing platform with proven patterns for caching, security, and performance."
+    author: "Hassan K. Al-Khalidi"
+    category: "tech"
+    date: "May 25, 2025"
+    readingTime: 15
 ---
 
 The edge computing revolution has fundamentally changed how we think about application performance. By moving computation closer to users, we can turn latency from a technical constraint into a competitive advantage. Cloudflare's edge platform, with its 300+ data centers worldwide, provides the infrastructure to build applications that feel instant regardless of where your users are located.
