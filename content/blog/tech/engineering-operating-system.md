@@ -2,7 +2,6 @@
 date: 2025-05-30
 title: "Engineering Operating System"
 tags: [engineering, teams, development]
-image: /og/engineering-operating-system-complete-guide.png
 category: tech
 description: "Master the engineering operating system that transforms chaotic development into predictable shipping. Learn the frameworks, metrics, and practices that turn engineering teams into high-performance machines."
 ---

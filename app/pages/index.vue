@@ -38,9 +38,9 @@
         <h2 class="text-sm uppercase tracking-wider text-zinc-500 mb-3">{{ section.title }}</h2>
         <ul class="divide-y divide-zinc-800 border-t border-b border-zinc-800">
           <li v-for="post in section.items" :key="post.id" class="py-3">
-            <NuxtLink :to="post.path" class="group flex items-baseline justify-between gap-4">
-              <span class="text-[15px] text-zinc-100 group-hover:text-white transition-colors">{{ post.title }}</span>
-              <time v-if="post.date" :datetime="post.date" class="text-xs tabular-nums text-zinc-500">{{ new Date(post.date).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: '2-digit' }) }}</time>
+            <NuxtLink :to="post.path" class="group flex items-start justify-between gap-4">
+              <span class="text-[15px] text-zinc-100 group-hover:text-white transition-colors flex-1 min-w-0">{{ post.title }}</span>
+              <time v-if="post.date" :datetime="post.date" class="text-xs tabular-nums text-zinc-500 flex-shrink-0 mt-0.5">{{ new Date(post.date).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: '2-digit' }) }}</time>
             </NuxtLink>
           </li>
         </ul>
@@ -50,9 +50,9 @@
     <section v-else>
       <ul class="divide-y divide-zinc-800 border-t border-b border-zinc-800">
         <li v-for="post in filtered" :key="post.id" class="py-3">
-          <NuxtLink :to="post.path" class="group flex items-baseline justify-between gap-4">
-            <span class="text-[15px] text-zinc-100 group-hover:text-white transition-colors">{{ post.title }}</span>
-            <time v-if="post.date" :datetime="post.date" class="text-xs tabular-nums text-zinc-500">{{ new Date(post.date).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: '2-digit' }) }}</time>
+          <NuxtLink :to="post.path" class="group flex items-start justify-between gap-4">
+            <span class="text-[15px] text-zinc-100 group-hover:text-white transition-colors flex-1 min-w-0">{{ post.title }}</span>
+            <time v-if="post.date" :datetime="post.date" class="text-xs tabular-nums text-zinc-500 flex-shrink-0 mt-0.5">{{ new Date(post.date).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: '2-digit' }) }}</time>
           </NuxtLink>
         </li>
       </ul>

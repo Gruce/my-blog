@@ -2,7 +2,7 @@
 date: 2024-10-31
 title: "Full-Stack Development Bootcamp with Tafa3ul Hub"
 tags: [bootcamp, education, mentorship]
-image: /og/tafa3ul-hub-bootcamp-october-2024.png
+image: /2025-bootcamp-fullstack/tafa3ul-hub-bootcamp-participants-learning.jpg
 category: events
 description: "A comprehensive 31-day full-stack development bootcamp covering web fundamentals, Nuxt 3, and NestJS with hands-on mentorship and real-world projects."
 ---

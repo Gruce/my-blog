@@ -2,7 +2,6 @@
 date: 2025-07-15
 title: "Modular Monolith"
 tags: [architecture, monolith, modular]
-image: /og/modular-monolith.png
 category: tech
 description: "A practical guide to building a modular monolith: clear boundaries, explicit interfaces, and a migration path that scales without premature microservices."
 ---

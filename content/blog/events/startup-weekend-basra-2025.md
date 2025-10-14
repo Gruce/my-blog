@@ -2,7 +2,7 @@
 date: 2025-01-15
 title: "Startup Weekend Basra 2025: Digital Transformation in Action"
 tags: [startup, entrepreneurship, mentorship]
-image: /og/startup-weekend-basra-2025.png
+image: /2025-startup-weekend-basra/startup-weekend-basra-2025-winners-celebration.jpeg
 category: events
 description: "Startup Weekend Basra 2025 brought together entrepreneurs, developers, and innovators for three days of intensive digital transformation projects, with mentorship from industry leaders."
 ---
