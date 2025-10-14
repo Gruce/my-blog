@@ -20,10 +20,10 @@ export default defineNuxtConfig({
   // },
   robots: {
     groups: [{ userAgent: '*', allow: '/' }]
-  }, 
+  },
   nitro: {
     preset: 'cloudflare_pages',
-},
+  },
   content: {
     highlight: {
       theme: {
