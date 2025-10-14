@@ -4,6 +4,11 @@ title: "Modern Frontend Architecture Guide"
 tags: [frontend, architecture, scalability]
 category: tech
 description: "Master modern frontend architecture with this comprehensive guide covering scalable patterns, team collaboration, performance optimization, and real-world implementation strategies for 2024 and beyond."
+sitemap:
+  loc: /modern-frontend-architecture-complete-guide
+  lastmod: 2025-10-05
+  changefreq: monthly
+  priority: 0.9
 ---
 
 

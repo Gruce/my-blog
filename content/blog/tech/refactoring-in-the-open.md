@@ -5,6 +5,11 @@ tags: [refactoring, architecture, communication]
 image: /og/refactoring-in-the-open.png
 category: tech
 description: "Learn how to refactor code transparently and effectively. Discover the principles and practices that make refactoring a collaborative, communicative process that improves code quality and team understanding."
+sitemap:
+  loc: /refactoring-in-the-open
+  lastmod: 2025-09-25
+  changefreq: monthly
+  priority: 0.8
 ---
 
 Small, visible changes beat big, hidden ones. This simple principle lies at the heart of effective refactoring—the practice of improving code structure without changing its external behavior. When done in the open, refactoring becomes more than just a technical activity; it becomes a form of communication that helps teams understand, maintain, and evolve their codebase.

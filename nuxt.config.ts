@@ -2,14 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-  modules: [
-    '@nuxt/fonts',
-    '@nuxtjs/tailwindcss',
-    '@nuxt/content',
-    '@nuxt/icon',
-    '@nuxtjs/robots',
-    'nuxt-llms',
-  ],
+  modules: ['@nuxt/fonts', '@nuxtjs/tailwindcss', '@nuxt/icon', '@nuxtjs/robots', 'nuxt-llms', '@nuxtjs/sitemap', '@nuxt/content'],
   runtimeConfig: {
     public: {
       siteUrl: 'https://gruceing.dev'
@@ -72,5 +65,15 @@ export default defineNuxtConfig({
   site: {
     url: 'https://gruceing.dev',
     name: 'Hassan K. Al-Khalidi (gruceing)'
+  },
+  sitemap: {
+    sources: [
+      '/api/__sitemap__/urls'
+    ],
+    discoverImages: false,
+    xsl: false,
+    hostname: process.env.NODE_ENV === 'production' 
+      ? 'https://gruceing.dev' 
+      : 'http://localhost:3000'
   }
 })

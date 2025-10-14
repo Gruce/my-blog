@@ -5,6 +5,11 @@ tags: [design, typography, readability]
 image: /og/typography-for-focus.png
 category: design
 description: "Master the art of typography that enhances focus and readability. Learn how to create text that guides attention, improves comprehension, and creates beautiful, functional designs."
+sitemap:
+  loc: /typography-for-focus
+  lastmod: 2025-10-10
+  changefreq: monthly
+  priority: 0.8
 ---
 
 Great typography is invisible until it needs to speak. It works silently in the background, guiding readers through content without drawing attention to itself. But when it needs to communicate hierarchy, emphasis, or mood, it speaks with clarity and purpose.

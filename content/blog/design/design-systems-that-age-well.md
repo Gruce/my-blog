@@ -5,6 +5,11 @@ tags: [design, systems, scalability]
 image: /og/design-systems-that-age-well.png
 category: design
 description: "Learn how to build design systems that evolve gracefully over time. Discover the principles, practices, and patterns that keep design systems relevant and maintainable as teams and products grow."
+sitemap:
+  loc: /design-systems-that-age-well
+  lastmod: 2025-09-29
+  changefreq: monthly
+  priority: 0.8
 ---
 
 Most design systems fail not because they're poorly designed, but because they can't adapt. They start strong with beautiful components and clear guidelines, then slowly become outdated, inconsistent, and eventually abandoned. The difference between a design system that thrives and one that dies isn't the initial design—it's how well it ages.

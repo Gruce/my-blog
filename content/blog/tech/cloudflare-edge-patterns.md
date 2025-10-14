@@ -4,6 +4,11 @@ title: "Cloudflare Edge Patterns: Building Lightning-Fast Applications with Glob
 tags: [edge, performance, latency, cloudflare, cdn]
 category: tech
 description: "Master Cloudflare's edge computing platform with proven patterns for caching, security, and performance. Learn how to build applications that feel instant worldwide while reducing costs and complexity."
+sitemap:
+  loc: /cloudflare-edge-patterns
+  lastmod: 2025-05-25
+  changefreq: monthly
+  priority: 0.8
 ogImage:
   component: BlogPost
   props:

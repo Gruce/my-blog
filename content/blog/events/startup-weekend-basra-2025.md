@@ -5,6 +5,11 @@ tags: [startup, entrepreneurship, mentorship]
 image: /2025-startup-weekend-basra/startup-weekend-basra-2025-winners-celebration.jpeg
 category: events
 description: "Startup Weekend Basra 2025 brought together entrepreneurs, developers, and innovators for three days of intensive digital transformation projects, with mentorship from industry leaders."
+sitemap:
+  loc: /startup-weekend-basra-2025
+  lastmod: 2025-01-15
+  changefreq: monthly
+  priority: 0.7
 ---
 
 ![Program Cover](/2025-startup-weekend-basra/startup-weekend-basra-2025-winners-celebration.jpeg)

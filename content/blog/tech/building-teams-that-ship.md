@@ -5,6 +5,11 @@ tags: [engineering, teams, productivity]
 image: /og/building-teams-that-ship.png
 category: tech
 description: "Learn how to build engineering teams that consistently deliver high-quality software. Discover the systems, processes, and cultural practices that make shipping predictable and sustainable."
+sitemap:
+  loc: /building-teams-that-ship
+  lastmod: 2025-05-13
+  changefreq: monthly
+  priority: 0.8
 ---
 
 Shipping is not a heroic act. It's the predictable outcome of a team that has systematically removed friction from decision-making, execution, and learning. The best engineering teams don't work harder—they design their environment so that shipping becomes the path of least resistance.

@@ -5,6 +5,11 @@ tags: [design, hierarchy, ux]
 image: /og/visual-hierarchy-that-guides.png
 category: design
 description: "Master visual hierarchy that guides users naturally through your interface. Learn how to create clear information architecture that reduces cognitive load and improves user experience."
+sitemap:
+  loc: /visual-hierarchy-that-guides
+  lastmod: 2025-08-03
+  changefreq: monthly
+  priority: 0.8
 ---
 
 Good hierarchy reduces thinking time. It creates clear paths through information, helping users understand what's important, what's related, and what they should do next. When hierarchy works well, users don't have to think about where to look or what to click—they just know.

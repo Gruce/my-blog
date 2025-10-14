@@ -4,6 +4,11 @@ title: "Building with AI: A Complete Guide to Human-AI Collaboration in Software
 tags: [ai, teams, workflow, productivity]
 category: tech
 description: "Master the art of human-AI collaboration in software development. Learn proven frameworks, real-world patterns, and practical strategies for leveraging AI as your coding partner while maintaining quality and control."
+sitemap:
+  loc: /building-with-ai-partner
+  lastmod: 2025-06-06
+  changefreq: monthly
+  priority: 0.9
 ogImage:
   component: BlogPost
   props:
@@ -13,8 +18,6 @@ ogImage:
     category: "tech"
     date: "Jun 06, 2025"
     readingTime: 12
-sitemap:
-  lastmod: 2025-06-06
 robots: index, follow
 schemaOrg:
   - "@type": "Article"

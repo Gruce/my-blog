@@ -5,6 +5,11 @@ tags: [events, innovation, iraq]
 image: /fin25.jpeg
 category: events
 description: "A comprehensive look at FIN 2025's Eye on the South conference, exploring how Iraq's southern region is becoming the epicenter of digital transformation and economic innovation."
+sitemap:
+  loc: /fin-2025-eye-on-the-south
+  lastmod: 2025-10-11
+  changefreq: monthly
+  priority: 0.7
 ---
 
 Every generation has a turning point. For Iraq, that moment is now—and it begins in the South. FIN 2025's "Eye on the South" conference wasn't just another business event; it was a signal of transformation, a call to focus our collective energy, ideas, and creativity on building a future that works for people.

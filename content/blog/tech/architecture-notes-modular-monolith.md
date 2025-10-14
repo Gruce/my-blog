@@ -4,6 +4,11 @@ title: "Modular Monolith"
 tags: [architecture, monolith, modular]
 category: tech
 description: "A practical guide to building a modular monolith: clear boundaries, explicit interfaces, and a migration path that scales without premature microservices."
+sitemap:
+  loc: /architecture-notes-modular-monolith
+  lastmod: 2025-07-15
+  changefreq: monthly
+  priority: 0.8
 ---
 
 Most systems start as monoliths. Good ones become modular. The modular monolith offers a pragmatic middle path: a single deployable unit with clear internal boundaries, explicit contracts, and independent evolution of domains—without the operational overhead of distributed systems.
