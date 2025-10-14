@@ -3,7 +3,7 @@
     <header class="mb-10">
       <div class="flex items-center gap-4 mb-6">
         <img 
-          src="/hassan-alkhalidi.png" 
+          src="/hassan-alkhalidi.jpg" 
           alt="Hassan K. Al-Khalidi" 
           class="w-16 h-16 rounded-full object-cover border border-zinc-800"
         />
