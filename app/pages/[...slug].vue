@@ -21,7 +21,66 @@ const { data: page } = await useAsyncData(route.path, () => {
   return queryCollection('blog').path(route.path).first()
 })
 
+
 const siteUrl = useRuntimeConfig().public?.siteUrl || ''
+
+// Calculate word count and reading time
+const wordCount = computed(() => {
+  if (!page.value) {
+    return 0
+  }
+  
+  // Extract text from minimark structure
+  const extractText = (node: any): string => {
+    if (!node) return ''
+    
+    // If it's a string, return it
+    if (typeof node === 'string') {
+      return node
+    }
+    
+    // If it's an array, process each element
+    if (Array.isArray(node)) {
+      return node.map(extractText).join(' ')
+    }
+    
+    // If it's an object with children, extract from children
+    if (node.children && Array.isArray(node.children)) {
+      return node.children.map(extractText).join(' ')
+    }
+    
+    // If it's an object with value, extract from value
+    if (node.value) {
+      return extractText(node.value)
+    }
+    
+    return ''
+  }
+  
+  // Get content from body.value (minimark structure)
+  let content = ''
+  if (page.value.body?.value) {
+    content = extractText(page.value.body.value)
+  }
+  
+  if (!content) {
+    return 0
+  }
+  
+  // Clean and count words
+  const words = content
+    .replace(/[^\w\s]/g, ' ') // Remove punctuation
+    .split(/\s+/)
+    .filter((word: string) => word.length > 0)
+  
+  return words.length
+})
+
+const readingTime = computed(() => {
+  const wordsPerMinute = 200 // Average reading speed
+  const minutes = Math.ceil(wordCount.value / wordsPerMinute)
+  return minutes
+})
 
 useSeoMeta({
   title: () => page.value?.title,
@@ -69,12 +128,30 @@ useHead(() => ({
 
     <header class="mb-8">
       <h1 class="text-2xl sm:text-3xl font-medium tracking-tight text-white/95 leading-tight">{{ page.title }}</h1>
-      <div class="mt-3 sm:mt-2 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 text-xs text-zinc-500">
-        <time v-if="page.date" :datetime="page.date" class="tabular-nums">{{ new Date(page.date).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: '2-digit' }) }}</time>
-        <span v-if="page.tags?.length" class="hidden sm:inline">•</span>
-        <ul v-if="page.tags?.length" class="flex flex-wrap gap-1.5 sm:gap-2">
-          <li v-for="tag in page.tags" :key="tag" class="px-2 py-0.5 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 text-xs">{{ tag }}</li>
-        </ul>
+      <div class="mt-4 space-y-3 sm:space-y-0 sm:mt-2 sm:flex sm:items-center sm:gap-3 text-xs text-zinc-500">
+        <!-- Date and reading stats row -->
+        <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+          <time v-if="page.date" :datetime="page.date" class="tabular-nums">{{ new Date(page.date).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: '2-digit' }) }}</time>
+          <span v-if="page.date && (wordCount > 0 || readingTime > 0)" class="hidden lg:inline text-zinc-600">•</span>
+          <div v-if="wordCount > 0" class="flex items-center gap-1.5">
+            <svg class="w-3 h-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+            <span class="tabular-nums">{{ wordCount.toLocaleString() }} words</span>
+          </div>
+          <span v-if="wordCount > 0 && readingTime > 0" class="hidden lg:inline text-zinc-600">•</span>
+          <div v-if="readingTime > 0" class="flex items-center gap-1.5">
+            <svg class="w-3 h-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="tabular-nums">{{ readingTime }} min read</span>
+          </div>
+        </div>
+        
+        <!-- Tags row -->
+        <div v-if="page.tags?.length" class="flex flex-wrap gap-1.5">
+          <span v-for="tag in page.tags" :key="tag" class="px-2 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 text-xs">{{ tag }}</span>
+        </div>
       </div>
     </header>
     <article class="prose prose-invert max-w-none prose-sm sm:prose-base">
