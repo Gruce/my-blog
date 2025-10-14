@@ -5,7 +5,7 @@
         <img 
           src="/hassan-alkhalidi.jpg" 
           alt="Hassan K. Al-Khalidi" 
-          class="w-16 h-16 rounded-full object-cover border border-zinc-800"
+          class="w-20 h-20 rounded-full object-cover border border-zinc-800"
         />
         <div>
           <h1 class="text-2xl font-medium tracking-tight text-white/95">Hassan K. Al-Khalidi</h1>
