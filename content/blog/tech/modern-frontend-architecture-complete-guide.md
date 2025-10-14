@@ -1,5 +1,5 @@
 ---
-date: 2025-01-15
+date: 2025-10-05
 title: "Modern Frontend Architecture Guide"
 tags: [frontend, architecture, scalability]
 image: /og/modern-frontend-architecture.png

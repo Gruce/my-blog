@@ -1,16 +1,25 @@
 <template>
   <div class="flex flex-col">
     <header class="mb-10">
-      <h1 class="text-2xl font-medium tracking-tight text-white/95">Hassan K. Al-Khalidi</h1>
-      <p class="text-zinc-400 mt-2 text-sm">Engineering, design, events, and DUDES Studio updates.</p>
+      <div class="flex items-center gap-4 mb-6">
+        <img 
+          src="/hassan-alkhalidi.png" 
+          alt="Hassan K. Al-Khalidi" 
+          class="w-16 h-16 rounded-full object-cover border border-zinc-800"
+        />
+        <div>
+          <h1 class="text-2xl font-medium tracking-tight text-white/95">Hassan K. Al-Khalidi</h1>
+          <p class="text-zinc-400 mt-1 text-sm">Engineering, design, and events.</p>
+        </div>
+      </div>
     </header>
 
-    <nav class="mb-6 flex flex-wrap gap-2">
+    <nav class="mb-6 flex flex-wrap gap-1">
       <button
         v-for="tab in tabs"
         :key="tab.key"
         @click="active = tab.key"
-        class="px-3 py-1 rounded-full border text-xs transition-colors"
+        class="px-3 py-2 rounded-full border text-xs transition-colors"
         :class="active === tab.key ? 'border-zinc-600 bg-zinc-900 text-zinc-100' : 'border-zinc-800 bg-transparent text-zinc-400 hover:text-zinc-200'"
         :aria-pressed="active === tab.key"
       >
@@ -47,41 +56,38 @@
 </template>
 
 <script setup lang="ts">
-type PostItem = { id: string; path: string; title: string; date?: string | Date; category?: 'company' | 'tech' | 'design' | 'events' }
+type PostItem = { id: string; path: string; title: string; date?: string | Date; category?: 'tech' | 'design' | 'events' }
 const { data: posts } = await useAsyncData<PostItem[]>('blog', async () => {
   const list = await queryCollection('blog').order('date', 'DESC').all()
   return list.map((p: any) => ({ id: p.id, path: p.path, title: p.title, date: p.date, category: p.category ?? 'tech' }))
 })
 
-type Group = { key: 'company' | 'tech' | 'design' | 'events'; title: string; items: PostItem[] }
+type Group = { key: 'tech' | 'design' | 'events'; title: string; items: PostItem[] }
 const sections = computed(() => {
-  const groups: Record<'company' | 'tech' | 'design' | 'events', Group> = {
-    company: { key: 'company', title: 'DUDES Studio', items: [] },
+  const groups: Record<'tech' | 'design' | 'events', Group> = {
     tech: { key: 'tech', title: 'Articles – Engineering', items: [] },
     design: { key: 'design', title: 'Articles – Design', items: [] },
     events: { key: 'events', title: 'Events & Workshops', items: [] }
   }
   for (const post of (posts.value || [])) {
-    const key = (post.category ?? 'tech') as 'company' | 'tech' | 'design' | 'events'
+    const key = (post.category ?? 'tech') as 'tech' | 'design' | 'events'
     groups[key].items.push(post)
   }
   return Object.values(groups).filter((g) => g.items.length > 0)
 })
 
-type TabKey = 'all' | 'company' | 'tech' | 'design' | 'events'
+type TabKey = 'all' | 'tech' | 'design' | 'events'
 const active = ref<TabKey>('all')
 
 const tabs = computed(() => {
   const counts: Record<TabKey, number> = {
     all: posts.value?.length || 0,
-    company: sections.value.find(s => s.key === 'company')?.items.length || 0,
     tech: sections.value.find(s => s.key === 'tech')?.items.length || 0,
     design: sections.value.find(s => s.key === 'design')?.items.length || 0,
     events: sections.value.find(s => s.key === 'events')?.items.length || 0,
   }
   return [
     { key: 'all' as TabKey, label: 'All', count: counts.all },
-    { key: 'company' as TabKey, label: 'DUDES Studio', count: counts.company },
     { key: 'tech' as TabKey, label: 'Engineering', count: counts.tech },
     { key: 'design' as TabKey, label: 'Design', count: counts.design },
     { key: 'events' as TabKey, label: 'Events', count: counts.events },
@@ -96,8 +102,8 @@ const filtered = computed(() => {
 useSeoMeta({
   title: 'Hassan K. Al-Khalidi — Blog',
   ogTitle: 'Hassan K. Al-Khalidi — Blog',
-  description: 'Engineering, design, events, and company updates from Hassan K. Al-Khalidi.',
-  ogDescription: 'Engineering, design, events, and company updates from Hassan K. Al-Khalidi.',
+  description: 'Engineering, design, and events from Hassan K. Al-Khalidi.',
+  ogDescription: 'Engineering, design, and events from Hassan K. Al-Khalidi.',
   ogType: 'website',
   twitterCard: 'summary_large_image'
 })

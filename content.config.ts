@@ -11,7 +11,7 @@ export default defineContentConfig({
         tags: z.array(z.string()),
         image: z.string(),
         date: z.date(),
-        category: z.enum(['company', 'tech', 'design', 'events']).optional().default('tech'),
+        category: z.enum(['tech', 'design', 'events']).optional().default('tech'),
         description: z.string().optional()
       })
     })

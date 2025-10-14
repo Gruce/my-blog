@@ -1,33 +1,49 @@
 ---
-date: 2025-09-02
-title: Performance, First Principles
-tags: [performance]
+date: 2025-04-23
+title: "Performance Principles"
+tags: [performance, ux, scaling]
 image: /og/performance.png
+category: tech
+description: "Users perceive friction, not milliseconds. Cut bytes, trips, and thinking—then protect wins with budgets and real‑user data."
 ---
 
 Users don’t perceive milliseconds; they perceive friction. Performance is the craft of removing it. Start with first principles, not micro‑optimizations.
 
-## What makes software feel fast
-1) Less to load: send fewer bytes. Image weight and third‑party scripts dominate your budget.
+## Table of Contents
 
-2) Less to wait on: do fewer round trips. Collapse requests, batch work, push data closer to the user.
+1. [What Feels Fast](#what-feels-fast)
+2. [A Practical Playbook](#a-practical-playbook)
+3. [Real-User Measurement](#real-user-measurement)
+4. [Protecting Gains](#protecting-gains)
+5. [Quarterly Tune-Up](#quarterly-tune-up)
 
-3) Less to think about: render useful content early. Skeletons are better than spinners; cached results are better than skeletons.
+## What Feels Fast
 
-## A practical playbook
-- Budget: set a hard cap for JS and images. Enforce in CI.
-- Order: prioritize meaningful paint and input readiness.
-- Cache: use CDN aggressively; cache at component and query layers.
-- Measure: collect real‑user metrics (LCP, INP, TTFB) from devices you don’t own.
+1) **Less to load**: Send fewer bytes. Images and third‑party scripts dominate the budget.
 
-## Make performance sustainable
-Add performance to the definition of done. Regressions are prevented by budgets and tests, not promises.
+2) **Less to wait on**: Do fewer round trips. Collapse requests, batch work, push data closer to users.
+
+3) **Less to think about**: Render useful content early. Skeletons beat spinners; cached results beat skeletons.
+
+## A Practical Playbook
+
+- **Budget**: Hard caps for JS and images; enforce in CI
+- **Order**: Prioritize meaningful paint and input readiness
+- **Cache**: CDN aggressively; cache at component and query layers
+- **Defer**: Push non‑critical work off the critical path
+
+## Real-User Measurement
+
+Collect LCP, INP, and TTFB from devices you don’t own. Track tail latencies (P95/P99) on the golden paths.
+
+## Protecting Gains
+
+Add performance to the definition of done. Regressions are prevented by budgets, alerts, and tests—not promises.
+
+## Quarterly Tune-Up
+
+- Set 150KB JS and 300KB image budgets; fail CI on regressions
+- Add RUM for LCP/INP; fix one top offender
+- Cache the most expensive query closer to users
 
 Fast software feels simple. That feeling is designed.
-
-## How to apply
-- Set a 150KB JS and 300KB images budget; fail CI on regressions.
-- Add real‑user monitoring for LCP/INP; fix one top offender.
-- Cache the most expensive query at the edge with SWR.
-
-
