@@ -1,5 +1,5 @@
 ---
-date: 2025-06-09
+date: 2025-05-30
 title: "Engineering Operating System"
 tags: [engineering, teams, development]
 image: /og/engineering-operating-system-complete-guide.png
