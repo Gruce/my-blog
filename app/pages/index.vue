@@ -126,12 +126,16 @@ const { gtag } = useGtag()
 
 const handleTabClick = (tabKey: TabKey) => {
   active.value = tabKey
-  if (tabKey !== 'all') {
-    gtag('event', 'select_content', {
-      content_type: 'category_filter',
-      item_id: tabKey,
-      item_name: tabKey
-    })
+  if (tabKey !== 'all' && process.client) {
+    try {
+      gtag('event', 'select_content', {
+        content_type: 'category_filter',
+        item_id: tabKey,
+        item_name: tabKey
+      })
+    } catch (error) {
+      console.warn('Analytics tracking error:', error)
+    }
   }
 }
 

@@ -29,16 +29,20 @@ watch(
   () => route.fullPath,
   () => {
     if (process.client) {
-      // Track page view with enhanced parameters
-      gtag('event', 'page_view', {
-        page_title: document.title,
-        page_location: window.location.href,
-        page_path: route.fullPath,
-        content_group1: route.path.startsWith('/blog/startup') ? 'startup' : 
-                       route.path.startsWith('/blog/tech') ? 'tech' :
-                       route.path.startsWith('/blog/design') ? 'design' :
-                       route.path.startsWith('/blog/events') ? 'events' : 'other'
-      })
+      try {
+        // Track page view with enhanced parameters
+        gtag('event', 'page_view', {
+          page_title: document.title,
+          page_location: window.location.href,
+          page_path: route.fullPath,
+          content_group1: route.path.startsWith('/blog/startup') ? 'startup' : 
+                         route.path.startsWith('/blog/tech') ? 'tech' :
+                         route.path.startsWith('/blog/design') ? 'design' :
+                         route.path.startsWith('/blog/events') ? 'events' : 'other'
+        })
+      } catch (error) {
+        console.warn('Analytics tracking error:', error)
+      }
     }
   },
   { immediate: true }
