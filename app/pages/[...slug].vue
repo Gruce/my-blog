@@ -94,6 +94,45 @@ const readingTime = computed(() => {
   return minutes
 })
 
+// Enhanced analytics tracking
+const articleRef = ref<HTMLElement>()
+const { gtag } = useGtag()
+
+// Track article view when component mounts
+onMounted(() => {
+  if (page.value) {
+    gtag('event', 'view_item', {
+      item_id: page.value.title,
+      item_name: page.value.title,
+      item_category: page.value.category || 'tech',
+      custom_parameter_1: page.value.category || 'tech',
+      custom_parameter_2: readingTime.value * 60,
+      content_type: 'article'
+    })
+  }
+})
+
+// Track scroll depth
+const handleScroll = () => {
+  if (!articleRef.value) return
+  
+  const scrollTop = articleRef.value.scrollTop
+  const scrollHeight = articleRef.value.scrollHeight
+  const clientHeight = articleRef.value.clientHeight
+  const scrollPercent = Math.round((scrollTop / (scrollHeight - clientHeight)) * 100)
+  
+  // Track at 25%, 50%, 75%, 100%
+  if (scrollPercent >= 25 && scrollPercent < 50) {
+    gtag('event', 'scroll', { percent_scrolled: 25 })
+  } else if (scrollPercent >= 50 && scrollPercent < 75) {
+    gtag('event', 'scroll', { percent_scrolled: 50 })
+  } else if (scrollPercent >= 75 && scrollPercent < 100) {
+    gtag('event', 'scroll', { percent_scrolled: 75 })
+  } else if (scrollPercent >= 100) {
+    gtag('event', 'scroll', { percent_scrolled: 100 })
+  }
+}
+
 useSeoMeta({
   title: () => page.value?.title,
   ogTitle: () => page.value?.title,
@@ -176,7 +215,11 @@ useHead(() => ({
         <span v-for="tag in page.tags" :key="tag" class="px-3 py-1.5 rounded-md bg-zinc-800/50 text-zinc-300 text-xs font-medium">{{ tag }}</span>
       </div>
     </header>
-    <article class="prose prose-invert max-w-full overflow-x-hidden prose-sm sm:prose-base">
+    <article 
+      ref="articleRef"
+      class="prose prose-invert max-w-full overflow-x-hidden prose-sm sm:prose-base"
+      @scroll="handleScroll"
+    >
       <ContentRenderer
         :value="page"
         :components="{

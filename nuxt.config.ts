@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-  modules: ['@nuxt/fonts', '@nuxtjs/tailwindcss', '@nuxt/icon', '@nuxtjs/robots', 'nuxt-llms', '@nuxtjs/sitemap', '@nuxt/content'],
+  modules: ['@nuxt/fonts', '@nuxtjs/tailwindcss', '@nuxt/icon', '@nuxtjs/robots', 'nuxt-llms', '@nuxtjs/sitemap', '@nuxt/content', 'nuxt-gtag'],
   runtimeConfig: {
     public: {
       siteUrl: 'https://gruceing.dev'
@@ -60,7 +60,7 @@ export default defineNuxtConfig({
     markdown: {
       mdc: true
     }
-  }, 
+  } as any, 
 
   site: {
     url: 'https://gruceing.dev',
@@ -75,5 +75,30 @@ export default defineNuxtConfig({
     hostname: process.env.NODE_ENV === 'production' 
       ? 'https://gruceing.dev' 
       : 'http://localhost:3000'
-  }
+  } as any,
+  gtag: {
+    enabled: process.env.NODE_ENV === 'production',
+    id: 'G-0C97MNN16J',
+    config: {
+      anonymize_ip: true,
+      send_page_view: false,
+      page_title: 'Hassan K. Al-Khalidi (gruceing)',
+      custom_map: {
+        custom_parameter_1: 'category',
+        custom_parameter_2: 'reading_time'
+      }
+    },
+    initCommands: [
+      ['consent', 'default', {
+        ad_user_data: 'denied',
+        ad_personalization: 'denied', 
+        ad_storage: 'denied',
+        analytics_storage: 'granted',
+        functionality_storage: 'granted',
+        security_storage: 'granted',
+        wait_for_update: 500
+      }]
+    ],
+    loadingStrategy: 'async'
+  } as any
 })

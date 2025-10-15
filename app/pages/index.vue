@@ -24,7 +24,7 @@
       <button
         v-for="tab in tabs"
         :key="tab.key"
-        @click="active = tab.key"
+        @click="handleTabClick(tab.key)"
         class="px-3 py-2 rounded-full border text-xs transition-colors"
         :class="active === tab.key ? 'border-zinc-600 bg-zinc-900 text-zinc-100' : 'border-zinc-800 bg-transparent text-zinc-400 hover:text-zinc-200'"
         :aria-pressed="active === tab.key"
@@ -120,6 +120,20 @@ const filtered = computed(() => {
   if (active.value === 'all') return posts.value || []
   return (posts.value || []).filter((p: PostItem) => (p.category ?? 'tech') === active.value)
 })
+
+// Enhanced analytics tracking
+const { gtag } = useGtag()
+
+const handleTabClick = (tabKey: TabKey) => {
+  active.value = tabKey
+  if (tabKey !== 'all') {
+    gtag('event', 'select_content', {
+      content_type: 'category_filter',
+      item_id: tabKey,
+      item_name: tabKey
+    })
+  }
+}
 
 useSeoMeta({
   title: 'Hassan K. Al-Khalidi (gruceing) — Engineering, Design & Events',
