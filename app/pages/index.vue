@@ -72,47 +72,50 @@ useSeoMeta({
   twitterCard: 'summary_large_image'
 })
 
-type PostItem = { id: string; path: string; title: string; date?: string | Date; category?: 'tech' | 'design' | 'events' }
+type PostItem = { id: string; path: string; title: string; date?: string | Date; category?: 'tech' | 'design' | 'events' | 'startup' }
 const { data: posts } = await useAsyncData<PostItem[]>('blog', async () => {
   const list = await queryCollection('blog').order('date', 'DESC').all()
   return list.map((p: any) => ({ id: p.id, path: p.path, title: p.title, date: p.date, category: p.category ?? 'tech' }))
 })
 
-type Group = { key: 'tech' | 'design' | 'events'; title: string; items: PostItem[] }
+type Group = { key: 'tech' | 'design' | 'events' | 'startup'; title: string; items: PostItem[] }
 const sections = computed(() => {
-  const groups: Record<'tech' | 'design' | 'events', Group> = {
+  const groups: Record<'tech' | 'design' | 'events' | 'startup', Group> = {
     tech: { key: 'tech', title: 'Articles – Engineering', items: [] },
     design: { key: 'design', title: 'Articles – Design', items: [] },
-    events: { key: 'events', title: 'Events & Workshops', items: [] }
+    events: { key: 'events', title: 'Events & Workshops', items: [] },
+    startup: { key: 'startup', title: 'Articles – Startups', items: [] }
   }
   for (const post of (posts.value || [])) {
-    const key = (post.category ?? 'tech') as 'tech' | 'design' | 'events'
+    const key = (post.category ?? 'tech') as 'tech' | 'design' | 'events' | 'startup'
     groups[key].items.push(post)
   }
   return Object.values(groups).filter((g) => g.items.length > 0)
 })
 
-type TabKey = 'all' | 'tech' | 'design' | 'events'
+type TabKey = 'all' | 'tech' | 'design' | 'events' | 'startup'
 const active = ref<TabKey>('all')
 
 const tabs = computed(() => {
   const counts: Record<TabKey, number> = {
     all: posts.value?.length || 0,
-    tech: sections.value.find(s => s.key === 'tech')?.items.length || 0,
-    design: sections.value.find(s => s.key === 'design')?.items.length || 0,
-    events: sections.value.find(s => s.key === 'events')?.items.length || 0,
+    tech: sections.value.find((s: Group) => s.key === 'tech')?.items.length || 0,
+    design: sections.value.find((s: Group) => s.key === 'design')?.items.length || 0,
+    events: sections.value.find((s: Group) => s.key === 'events')?.items.length || 0,
+    startup: sections.value.find((s: Group) => s.key === 'startup')?.items.length || 0,
   }
   return [
     { key: 'all' as TabKey, label: 'All', count: counts.all },
     { key: 'tech' as TabKey, label: 'Engineering', count: counts.tech },
     { key: 'design' as TabKey, label: 'Design', count: counts.design },
     { key: 'events' as TabKey, label: 'Events', count: counts.events },
+    { key: 'startup' as TabKey, label: 'Startups', count: counts.startup },
   ]
 })
 
 const filtered = computed(() => {
   if (active.value === 'all') return posts.value || []
-  return (posts.value || []).filter(p => (p.category ?? 'tech') === active.value)
+  return (posts.value || []).filter((p: PostItem) => (p.category ?? 'tech') === active.value)
 })
 
 useSeoMeta({
