@@ -90,7 +90,10 @@ const sections = computed(() => {
     const key = (post.category ?? 'tech') as 'tech' | 'design' | 'events' | 'startup'
     groups[key].items.push(post)
   }
-  return Object.values(groups).filter((g) => g.items.length > 0)
+  const orderedKeys: Array<'startup' | 'tech' | 'design' | 'events'> = ['startup', 'tech', 'design', 'events']
+  return orderedKeys
+    .map(k => groups[k])
+    .filter((g) => g.items.length > 0)
 })
 
 type TabKey = 'all' | 'tech' | 'design' | 'events' | 'startup'
@@ -106,10 +109,10 @@ const tabs = computed(() => {
   }
   return [
     { key: 'all' as TabKey, label: 'All', count: counts.all },
+    { key: 'startup' as TabKey, label: 'Startups', count: counts.startup },
     { key: 'tech' as TabKey, label: 'Engineering', count: counts.tech },
     { key: 'design' as TabKey, label: 'Design', count: counts.design },
     { key: 'events' as TabKey, label: 'Events', count: counts.events },
-    { key: 'startup' as TabKey, label: 'Startups', count: counts.startup },
   ]
 })
 
