@@ -28,4 +28,8 @@ body {
   background-color: black;
   color: white;
 }
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
 </style>

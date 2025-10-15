@@ -176,7 +176,7 @@ useHead(() => ({
         <span v-for="tag in page.tags" :key="tag" class="px-3 py-1.5 rounded-md bg-zinc-800/50 text-zinc-300 text-xs font-medium">{{ tag }}</span>
       </div>
     </header>
-    <article class="prose prose-invert max-w-none prose-sm sm:prose-base">
+    <article class="prose prose-invert max-w-full overflow-x-hidden prose-sm sm:prose-base">
       <ContentRenderer
         :value="page"
         :components="{
