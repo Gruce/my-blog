@@ -1,5 +1,5 @@
 ---
-date: 2025-01-23
+date: 2025-10-23
 title: "Why Products Fail: Marty Cagan's Key Insights"
 tags: [startup, product, failure, teams]
 image: /og/why-products-fail-marty-cagan.png
