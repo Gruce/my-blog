@@ -12,8 +12,6 @@ sitemap:
   priority: 0.9
 ---
 
-# The Krebs Cycle of Creativity: A Complete Guide to Creative Process
-
 Creativity isn't random inspiration—it's a systematic process that can be understood, optimized, and mastered. Neri Oxman's revolutionary "Krebs Cycle of Creativity" provides a framework for navigating the complex interplay between art, science, engineering, and design to unlock breakthrough innovation.
 
 This isn't just theory. It's a practical guide that has shaped how top companies, research institutions, and creative teams approach innovation. From Apple's design philosophy to MIT's Media Lab, this framework has proven its value in real-world applications.
