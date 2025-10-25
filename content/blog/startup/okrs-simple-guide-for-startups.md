@@ -7,7 +7,6 @@ category: startup
 description: "A simple guide to OKRs for startups: set clear goals, measure progress, and win together."
 ---
 
-OKRs help teams pick a goal and know if they are getting closer. Think of OKRs like a treasure map: the Objective is the treasure you want, and the Key Results are the steps that tell you if you’re getting closer.
 
 ## Table of Contents
 

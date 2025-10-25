@@ -12,8 +12,6 @@ sitemap:
   priority: 0.9
 ---
 
-# Why B-Players Hire C-Players: Max Levchin's Deep Dive into Steve Jobs' Famous Insight
-
 Steve Jobs once said that A-players hire A-players, and B-players hire C-players. It's one of the most quoted insights in Silicon Valley, but few people understand the deeper psychology behind why this happens. Max Levchin, co-founder of PayPal and Affirm, has spent years thinking about this phenomenon and has uncovered the hidden truth: it's not about competence—it's about fear.
 
 The PayPal Mafia, as they came to be known, built some of the most successful companies in Silicon Valley. But their success wasn't just about technical brilliance or market timing. It was about understanding how to build teams that actually work, and that starts with understanding the psychology of hiring.
