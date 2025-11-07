@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen max-w-2xl mx-auto p-6">
+  <div class="min-h-screen mx-auto">
     <NuxtRouteAnnouncer />
 
     <NuxtPage />
