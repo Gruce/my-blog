@@ -4,604 +4,103 @@ globs: content/blog/**/*.md
 alwaysApply: true
 ---
 
-# How to Create First-Page Ranking Content for Nuxt.js Blogs
+# Content That Ranks
 
-*Based on analysis of high-performing technical content, SEO best practices, and Nuxt.js blog optimization*
-
----
-
-## Executive Summary
-
-This guideline distills the patterns from successful long-form technical content that ranks on Google's first page, specifically optimized for Nuxt.js blogs using @nuxt/content. The goal is to create comprehensive, valuable content that outranks competitors through superior structure, depth, user value, and technical SEO implementation.
-
-## Core Principles
-
-### 1. Content Depth Over Keyword Density
-- **Target**: 3,000-5,000+ words of substantive content
-- **Focus**: Comprehensive coverage that leaves no stone unturned
-- **Approach**: Answer every possible question a reader might have
-- **Evidence**: The modern frontend architecture guide is 1,525 lines of dense, actionable content
-
-### 2. User Intent First
-- **Primary Intent**: Educational/informational (How-to, What is, Why)
-- **Secondary Intent**: Commercial investigation (comparison, evaluation)
-- **Tertiary Intent**: Transactional (tools, resources, implementation)
-
-### 3. Authority Through Experience
-- **Voice**: Write from years of hands-on experience
-- **Examples**: Include real-world code, case studies, and practical implementations
-- **Credibility**: Reference specific tools, frameworks, and methodologies
+*Simple. Deep. Valuable.*
 
 ---
 
-## Content Structure Framework
+## The Core
 
-### 1. Front Matter (Metadata) - Nuxt Content Schema
+**Write for humans first. Search engines second.**
+
+Create content so valuable that people want to read it, share it, and return to it. That's how you rank.
+
+---
+
+## Front Matter
+
 ```yaml
 ---
 date: 2025-01-15
-title: "Short, Simple Title with Primary Keyword"
-tags: [primary, secondary, tertiary] # Maximum 3 tags only, one word each
-image: /og/descriptive-filename.png
-category: tech # Must be one of: tech, design, events
-description: "Compelling 150-160 character description with primary keyword and clear value proposition"
+title: "Short Title with Keyword"
+tags: [one, two, three] # Max 3, single words only
+image: /og/filename.png
+category: tech # tech, design, events, or startup
+series: "Series Name" # Optional
+seriesOrder: 1 # Optional
+description: "150-160 chars with value prop"
 ---
 ```
 
-**Key Elements:**
-- **Title**: Short and simple, includes primary keyword naturally, max 50 characters for optimal display
-- **Description**: Under 160 characters with clear value proposition
-- **Tags**: Maximum 3 tags only, each tag must be one word only - choose the most relevant and high-impact keywords
-- **Category**: Must match your blog's taxonomy (tech, design, events)
-- **Image**: Descriptive filename for SEO, stored in `/public/og/`
-- **Date**: ISO format for proper chronological ordering
-
-**Nuxt Content Integration:**
-- Schema validation ensures consistent metadata
-- Automatic SEO meta generation via `useSeoMeta()`
-- Structured data via `useHead()` with JSON-LD
-- Category-based filtering and organization
-
-### 2. Opening Hook (First 100 Words)
-**Pattern from successful content:**
-- Start with a relatable problem or pain point
-- Use specific, concrete language
-- Establish credibility immediately
-- Promise comprehensive value
-
-**Example Structure:**
-```
-[Problem statement with specific context] + [Why current solutions fail] + [What this guide provides] + [Credibility indicator]
-```
-
-### 3. Table of Contents
-**Requirements:**
-- 10-15 major sections minimum
-- Descriptive, keyword-rich headings
-- Hierarchical structure (H2, H3, H4)
-- Anchor links for navigation
-
-**Pattern:**
-```
-1. [Foundation/Introduction Section]
-2. [Core Principles/Fundamentals]
-3. [Implementation/How-to Sections] (3-5 sections)
-4. [Advanced Topics] (2-3 sections)
-5. [Real-world Applications]
-6. [Common Pitfalls/Troubleshooting]
-7. [Future Considerations]
-8. [Conclusion/Next Steps]
-```
-
-### 4. Content Sections
-
-#### A. Foundation Section
-- **Purpose**: Establish context and importance
-- **Length**: 300-500 words
-- **Elements**:
-  - Problem definition
-  - Why it matters now
-  - Historical context
-  - Current landscape overview
-
-#### B. Core Principles
-- **Purpose**: Establish fundamental concepts
-- **Length**: 400-600 words per principle
-- **Elements**:
-  - 3-5 key principles
-  - Clear explanations with examples
-  - Code snippets or visual aids
-  - "Why this matters" statements
-
-#### C. Implementation Sections
-- **Purpose**: Provide actionable guidance
-- **Length**: 500-800 words per section
-- **Elements**:
-  - Step-by-step instructions
-  - Code examples with explanations
-  - Multiple approaches/alternatives
-  - Best practices and gotchas
-
-#### D. Advanced Topics
-- **Purpose**: Demonstrate expertise and depth
-- **Length**: 400-700 words per section
-- **Elements**:
-  - Complex scenarios
-  - Performance considerations
-  - Integration patterns
-  - Scalability concerns
-
-#### E. Real-world Applications
-- **Purpose**: Bridge theory and practice
-- **Length**: 300-500 words
-- **Elements**:
-  - Case studies or examples
-  - Migration strategies
-  - Team considerations
-  - Business impact
-
-#### F. Common Pitfalls
-- **Purpose**: Add unique value and prevent mistakes
-- **Length**: 300-400 words
-- **Elements**:
-  - Specific anti-patterns
-  - Why they're problematic
-  - How to avoid them
-  - Better alternatives
-
-#### G. Future-proofing
-- **Purpose**: Demonstrate forward thinking
-- **Length**: 200-400 words
-- **Elements**:
-  - Emerging trends
-  - Technology evolution
-  - Scalability considerations
-  - Migration paths
-
-### 5. Conclusion
-- **Purpose**: Summarize value and provide next steps
-- **Length**: 200-300 words
-- **Elements**:
-  - Key takeaways (3-5 bullet points)
-  - Actionable next steps
-  - Related resources
-  - Call to action
+**Rules:**
+- Title: As brief as possible. As smart as possible. 50 chars max.
+- Tags: 3 max, one word each
+- Description: 150-160 chars
+- Category: Must match taxonomy
 
 ---
 
-## Content Quality Standards
+## Structure
 
-### 1. Technical Accuracy
-- **Code Examples**: Must be syntactically correct and runnable
-- **Version References**: Include specific versions and compatibility notes
-- **Best Practices**: Align with current industry standards
-- **Testing**: Verify all examples and claims
+**Start with the problem.** People search because they have a problem.
 
-### 2. Readability
-- **Sentence Length**: Average 15-20 words
-- **Paragraph Length**: 2-4 sentences maximum
-- **Subheadings**: Every 200-300 words
-- **Lists**: Use bullet points and numbered lists liberally
+**Show you understand.** Use specific examples, real code, actual experiences.
 
-### 3. Visual Elements
-- **Images**: High-quality visuals that support the content
-- **Screenshots**: When showing results or examples
-- **Tables**: For comparisons and specifications
-- **Charts**: Simple visual representations of data
+**Solve it completely.** Answer every question. Leave nothing unanswered.
 
-### 4. Internal Linking
-- **Related Articles**: 3-5 contextual links to other content
-- **Anchor Links**: Link to specific sections within the article
-- **Resource Links**: Link to tools, documentation, and references
+**Make it actionable.** Every section should teach something usable.
 
 ---
 
-## SEO Optimization Techniques
+## Depth
 
-### 1. Keyword Strategy
-**Primary Keyword**: Include in title, first paragraph, and 2-3 times naturally
-**Secondary Keywords**: Include in subheadings and throughout content
-**Long-tail Keywords**: Target specific phrases users search for
-**Semantic Keywords**: Use related terms and synonyms
+**3,000-5,000 words minimum.** Not fluff. Substance.
 
-### 2. Content Optimization
-- **Keyword Density**: 1-2% for primary keyword, natural distribution
-- **LSI Keywords**: Include semantically related terms
-- **User Questions**: Answer specific questions users ask
-- **Featured Snippet Optimization**: Structure content for snippet capture
-
-### 3. Technical SEO - Nuxt.js Implementation
-- **Meta Description**: 150-160 characters with clear value proposition
-- **Header Structure**: Proper H1, H2, H3 hierarchy
-- **Image Alt Text**: Descriptive, keyword-rich alt attributes
-- **Internal Linking**: Strategic links to related content
-- **Structured Data**: JSON-LD schema for articles (automatically generated)
-- **Open Graph**: Automatic OG tags via `useSeoMeta()`
-- **Twitter Cards**: Summary large image cards
-- **Canonical URLs**: Automatic canonical URL generation
-- **Sitemap**: Auto-generated sitemap (when enabled)
-- **Robots.txt**: Proper crawling directives
-
-### 4. User Experience Signals
-- **Dwell Time**: Create content that keeps users engaged
-- **Scroll Depth**: Structure content to encourage full reading
-- **Click-through Rate**: Compelling titles and descriptions
-- **Social Shares**: Valuable content that people want to share
+Every word earns its place. Every section adds value. Every example teaches.
 
 ---
 
-## Nuxt.js Blog-Specific SEO Implementation
+## SEO
 
-### 1. Content Schema Configuration
-```typescript
-// content.config.ts
-export default defineContentConfig({
-  collections: {
-    blog: defineCollection({
-      type: 'page',
-      source: 'blog/**/*.md',
-      schema: z.object({
-        tags: z.array(z.string()),
-        image: z.string(),
-        date: z.date(),
-        category: z.enum(['tech', 'design', 'events']).optional().default('tech'),
-        description: z.string().optional()
-      })
-    })
-  }
-})
-```
+**Keywords in title, first paragraph, naturally throughout.**
 
-### 2. SEO Meta Implementation
-```vue
-<!-- [...slug].vue -->
-<script setup>
-const { data: page } = await useAsyncData(route.path, () => {
-  return queryCollection('blog').path(route.path).first()
-})
+**Proper headings.** H2 for major sections. H3 for subsections. Clear hierarchy.
 
-useSeoMeta({
-  title: () => page.value?.title,
-  ogTitle: () => page.value?.title,
-  description: () => page.value?.description || page.value?.title,
-  ogDescription: () => page.value?.description || page.value?.title,
-  ogType: 'article',
-  ogImage: () => page.value?.image,
-  twitterCard: 'summary_large_image'
-})
-</script>
-```
+**Internal links.** Connect related content. 3-5 contextual links per article.
 
-### 3. Structured Data (JSON-LD)
-```vue
-<script setup>
-useHead(() => ({
-  script: [
-    {
-      type: 'application/ld+json',
-      innerHTML: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'Article',
-        headline: page.value?.title,
-        description: page.value?.description || page.value?.title,
-        image: page.value?.image ? [page.value.image] : undefined,
-        datePublished: page.value?.date,
-        author: [{ '@type': 'Person', name: 'Hassan K. Al-Khalidi' }],
-        mainEntityOfPage: siteUrl + (page.value?.path || ''),
-      })
-    }
-  ]
-}))
-</script>
-```
-
-### 4. Category-Based Organization
-```vue
-<!-- index.vue -->
-<script setup>
-const { data: posts } = await useAsyncData('blog', async () => {
-  const list = await queryCollection('blog').order('date', 'DESC').all()
-  return list.map((p: any) => ({ 
-    id: p.id, 
-    path: p.path, 
-    title: p.title, 
-    date: p.date, 
-    category: p.category ?? 'tech' 
-  }))
-})
-
-const sections = computed(() => {
-  const groups: Record<'tech' | 'design' | 'events', Group> = {
-    tech: { key: 'tech', title: 'Articles – Engineering', items: [] },
-    design: { key: 'design', title: 'Articles – Design', items: [] },
-    events: { key: 'events', title: 'Events & Workshops', items: [] }
-  }
-  // Group posts by category for better organization
-})
-</script>
-```
-
-### 5. Content Rendering with Custom Components
-```vue
-<template>
-  <article class="prose prose-invert max-w-none">
-    <ContentRenderer
-      :value="page"
-      :components="{
-        p: ProseP,
-        a: ProseA,
-        h1: ProseH1,
-        h2: ProseH2,
-        h3: ProseH3,
-        ul: ProseUl,
-        ol: ProseOl,
-        li: ProseLi,
-        blockquote: ProseBlockquote,
-        code: ProseCodeInline,
-        pre: ProseCode,
-        hr: ProseHr,
-        img: ProseImg,
-        strong: ProseStrong,
-        em: ProseEm,
-        mermaid: ProseMermaid
-      }"
-    />
-  </article>
-</template>
-```
+**Structured data.** Already handled by Nuxt. Just use the schema.
 
 ---
 
-## Writing Process
+## Quality
 
-### Phase 1: Research and Planning (2-3 hours)
-1. **Competitor Analysis**
-   - Identify top-ranking pages for target keywords
-   - Analyze their structure, length, and approach
-   - Find content gaps and opportunities
+**Code examples work.** Test them.
 
-2. **Keyword Research**
-   - Primary keyword and variations
-   - Long-tail keyword opportunities
-   - Question-based queries
-   - Related topic clusters
+**Facts are accurate.** Verify everything.
 
-3. **Content Outline**
-   - Detailed section breakdown
-   - Key points for each section
-   - Code examples and visual elements
-   - Internal linking strategy
+**Examples are real.** No hypotheticals. Real projects, real results.
 
-### Phase 2: Content Creation (6-8 hours)
-1. **Draft Writing**
-   - Write sections in order
-   - Include all planned elements
-   - Focus on value over word count
-   - Maintain consistent voice and tone
-
-2. **Visual Elements**
-   - Create high-quality images and screenshots
-   - Design charts and visual aids
-   - Verify all claims and data
-   - Add proper formatting and visual hierarchy
-
-3. **Nuxt Content Integration**
-   - Create markdown file in appropriate category folder
-   - Add proper front matter with all required fields
-   - Use custom prose components for enhanced styling
-   - Test content rendering in development
-
-4. **Quality Assurance**
-   - Fact-check all information
-   - Verify code examples work
-   - Check for typos and grammar
-   - Ensure consistent formatting
-   - Validate schema compliance
-
-### Phase 3: Optimization (1-2 hours)
-1. **SEO Review**
-   - Keyword placement and density
-   - Meta tags and descriptions
-   - Internal linking opportunities
-   - Image optimization
-   - Schema validation
-
-2. **Nuxt.js Specific Checks**
-   - Verify `useSeoMeta()` implementation
-   - Check JSON-LD structured data
-   - Test category-based organization
-   - Validate content rendering
-   - Ensure proper URL structure
-
-3. **User Experience**
-   - Readability analysis
-   - Navigation and structure
-   - Visual appeal and formatting
-   - Mobile responsiveness
-   - Dark mode compatibility
-
-4. **Final Review**
-   - Complete content audit
-   - Performance optimization
-   - Publication readiness check
-   - Cross-browser testing
+**Voice is consistent.** Write like you're talking to a colleague who's smart but new to the topic.
 
 ---
 
-## Content Templates
+## Series
 
-### Complete Article Template
-```markdown
----
-date: 2025-01-15
-title: "Short, Simple Title with Primary Keyword"
-tags: [primary, secondary, tertiary] # Maximum 3 tags only, one word each
-image: /og/descriptive-filename.png
-category: tech
-description: "Compelling 150-160 character description with primary keyword and clear value proposition"
----
+**Group related articles.** Use `series` and `seriesOrder` fields.
 
-[Opening hook paragraph - 100 words max]
-
-## Table of Contents
-
-1. [Section 1](#section-1)
-2. [Section 2](#section-2)
-3. [Section 3](#section-3)
-...
-
-## Section 1: Foundation
-
-[Opening paragraph that establishes context and importance]
-
-### Subheading for Specific Topic
-
-[Explanation with specific examples]
-
-```typescript
-// Code example with comments
-function example() {
-  // Implementation details
-}
-```
-
-[Explanation of code and why it matters]
-
-**Key Points:**
-- Point 1 with specific detail
-- Point 2 with practical application
-- Point 3 with best practice
-
-[Transition to next section]
-
-## Conclusion
-
-[Summary with key takeaways and next steps]
-
-**Related Articles:**
-- [Link to related content](./related-article.md)
-- [Another related article](./another-article.md)
-```
-
-### Section Template
-```markdown
-## [Descriptive Heading with Primary Keyword]
-
-[Opening paragraph that establishes context and importance]
-
-### [Subheading for Specific Topic]
-
-[Explanation with specific examples and case studies]
-
-**Key Points:**
-- Point 1 with specific detail
-- Point 2 with practical application
-- Point 3 with best practice
-
-[Transition to next section]
-```
-
-### Example Template
-```markdown
-**Real-World Example:**
-
-[Describe a specific case study or example]
-
-**Why This Works:**
-- Explanation of the approach
-- Benefits and trade-offs
-- When to use this method
-```
-
-### Visual Template
-```markdown
-**Process Flow:**
-
-1. **Step 1**: [Description of first step]
-2. **Step 2**: [Description of second step]
-3. **Step 3**: [Description of third step]
-4. **Outcome**: [Expected result]
-
-**Visual Representation:**
-[Include a simple chart or diagram if helpful]
-```
-
-### Internal Linking Template
-```markdown
-**Related Articles:**
-- [Effective Frontend Architecture](./effective-frontend-architecture.md)
-- [Building Teams That Ship](./building-teams-that-ship.md)
-- [Performance First Principles](./performance-first-principles.md)
-- [Design Docs That Work](./design-docs-that-work.md)
-```
+**First article visible.** Others collapsible. Clean. Organized.
 
 ---
 
-## Success Metrics
+## The Test
 
-### 1. Content Quality Indicators
-- **Comprehensiveness**: Covers all aspects of the topic
-- **Practical Value**: Includes actionable examples and code
-- **Authority**: Demonstrates deep expertise and experience
-- **Uniqueness**: Provides insights not found elsewhere
+Before publishing, ask:
 
-### 2. SEO Performance Metrics
-- **Ranking Position**: Target top 3 positions for primary keyword
-- **Organic Traffic**: Measurable increase in targeted traffic
-- **Click-through Rate**: Above 3% for search results
-- **Dwell Time**: Average 3+ minutes on page
+1. **Would I bookmark this?** If not, rewrite.
+2. **Does it solve the problem completely?** If not, add more.
+3. **Is every word necessary?** If not, cut it.
 
-### 3. User Engagement Signals
-- **Social Shares**: Content shared across platforms
-- **Comments and Discussion**: User engagement and questions
-- **Backlinks**: Natural links from other authoritative sites
-- **Return Visitors**: Users coming back for more content
+**Simple. Deep. Valuable.**
 
----
-
-## Common Mistakes to Avoid
-
-### 1. Content Mistakes
-- **Thin Content**: Insufficient depth or value
-- **Keyword Stuffing**: Unnatural keyword placement
-- **Outdated Information**: Not keeping content current
-- **Poor Structure**: Difficult to navigate or read
-
-### 2. Content Mistakes
-- **Unclear Examples**: Examples that don't illustrate the point
-- **Missing Context**: Information without proper explanation
-- **Outdated Information**: Not keeping content current
-- **Poor Structure**: Difficult to follow or understand
-
-### 3. SEO Mistakes
-- **Duplicate Content**: Similar to existing pages
-- **Poor Meta Tags**: Weak titles and descriptions
-- **Missing Internal Links**: No connection to other content
-- **Slow Loading**: Poor performance optimization
-
-### 4. Blog-Specific Mistakes
-- **Schema Violations**: Not following content schema requirements
-- **Missing Categories**: Not using proper category taxonomy
-- **Poor URL Structure**: Not following routing conventions
-- **Missing Structured Data**: Not implementing proper metadata
-- **Too Many Tags**: Using more than 3 tags dilutes focus and SEO impact
-- **Multi-word Tags**: Tags should be single words only for better categorization and SEO
-- **Overly Long Titles**: Titles longer than 50 characters reduce readability and SEO effectiveness
-
----
-
-## Conclusion
-
-Creating first-page ranking content for your Nuxt.js blog requires a systematic approach that balances technical expertise, user value, SEO optimization, and platform-specific implementation. The key is to create content that genuinely helps users solve real problems while leveraging the full power of Nuxt.js and @nuxt/content.
-
-**Key Success Factors:**
-1. **Content Depth**: 3,000-5,000+ words of substantive, actionable content
-2. **SEO Implementation**: Proper use of blog SEO features and content schema
-3. **User Experience**: Category-based organization and clear structure
-4. **Authority Building**: Real-world examples and practical insights
-
-**Remember**: The goal isn't just to rank well—it's to create content that establishes authority, drives engagement, and provides lasting value to your audience.
-
----
-
-*This guideline is based on analysis of successful content, proven SEO strategies, and your specific blog implementation. The techniques are tailored to your content management system and can be adapted as your blog evolves.*
+That's it.

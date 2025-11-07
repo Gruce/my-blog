@@ -14,7 +14,9 @@ export default defineContentConfig({
         category: z.enum(['tech', 'design', 'events', 'startup']).optional().default('tech'),
         description: z.string().optional(),
         author: z.string().optional().default('Hassan K. Al-Khalidi'),
-        authorAlternateNames: z.array(z.string()).optional().default(['Hassan Alkhalidi', 'حسن الخالدي', 'حسن', 'حسن خالد', 'gruce', 'gruceing'])
+        authorAlternateNames: z.array(z.string()).optional().default(['Hassan Alkhalidi', 'حسن الخالدي', 'حسن', 'حسن خالد', 'gruce', 'gruceing']),
+        series: z.string().optional(),
+        seriesOrder: z.number().optional()
       })
     })
   }

@@ -1,37 +1,13 @@
 ---
 date: 2025-10-14
-title: "Designing AI Copilot Interfaces"
+title: "AI Copilots"
 tags: [design, ai, copilot]
 image: /og/designing-ai-copilot-interfaces.png
 category: design
 description: "A practical guide to AI copilot UX: principles, patterns, prompts, safety, and implementation for high-trust, high-utility assistants."
-sitemap:
-  loc: /designing-ai-copilot-interfaces
-  lastmod: 2025-10-14
-  changefreq: monthly
-  priority: 0.8
 ---
 
 Great copilots don't just answer questions—they accelerate judgment. Most attempts bolt a chat box onto existing products. The result is novelty without reliability. This guide distills years of building AI-augmented tools into concrete patterns for interfaces that feel helpful, honest, and fast—without pretending to be human.
-
-## Table of Contents
-
-1. [Why Copilots Need Different UX](#why-copilots-need-different-ux)
-2. [Core Principles](#core-principles)
-3. [Task Models: From Queries to Jobs](#task-models-from-queries-to-jobs)
-4. [Information Architecture for Copilots](#information-architecture-for-copilots)
-5. [Prompt UX That Scales](#prompt-ux-that-scales)
-6. [Grounding, Tools, and Authority](#grounding-tools-and-authority)
-7. [Uncertainty, Latency, and Transparency](#uncertainty-latency-and-transparency)
-8. [Feedback Loops and Correctability](#feedback-loops-and-correctability)
-9. [Safety, Consent, and Data Boundaries](#safety-consent-and-data-boundaries)
-10. [Interaction Patterns That Work](#interaction-patterns-that-work)
-11. [Implementing with Design Tokens](#implementing-with-design-tokens)
-12. [Instrumentation and Quality](#instrumentation-and-quality)
-13. [Case Studies](#case-studies)
-14. [Common Pitfalls](#common-pitfalls)
-15. [Future-Proofing Your Copilot](#future-proofing-your-copilot)
-16. [Conclusion](#conclusion)
 
 ## Why Copilots Need Different UX
 
@@ -45,11 +21,15 @@ Designing for these realities demands explicit patterns for truth, provenance, a
 
 ## Core Principles
 
-1. Show your work: cite sources, reveal assumptions, and expose steps.
-2. Be corrigible: make every output easy to edit, refine, or reverse.
-3. Bound authority: scope capabilities; require consent to cross boundaries.
-4. Favor defaults over instructions: infer intent; ask only when necessary.
-5. Optimize for recovery: fast undo beats flawless first tries.
+**Show your work:** cite sources, reveal assumptions, and expose steps.
+
+**Be corrigible:** make every output easy to edit, refine, or reverse.
+
+**Bound authority:** scope capabilities; require consent to cross boundaries.
+
+**Favor defaults over instructions:** infer intent; ask only when necessary.
+
+**Optimize for recovery:** fast undo beats flawless first tries.
 
 ## Task Models: From Queries to Jobs
 
@@ -73,9 +53,9 @@ Move from free-form chat to job-centric flows: diagnose → propose → preview 
 
 Structure the surface into three persistent zones:
 
-- Prompt panel: intent, context chips, history.
-- Workspace: previews, diffs, drafts, or canvases.
-- Evidence rail: citations, data scopes, permissions.
+- **Prompt panel:** intent, context chips, history.
+- **Workspace:** previews, diffs, drafts, or canvases.
+- **Evidence rail:** citations, data scopes, permissions.
 
 This mirrors how people decide: intent → option → evidence.
 
@@ -205,9 +185,11 @@ Quality is a product surface. Instrument for:
 
 ## Case Studies
 
-1. Design review summarizer that links to exact comments and diffs.
-2. Token migration assistant with previewable PRs and reversible changes.
-3. Research synthesis that outputs decision-ready briefs with citations.
+**Design review summarizer** that links to exact comments and diffs.
+
+**Token migration assistant** with previewable PRs and reversible changes.
+
+**Research synthesis** that outputs decision-ready briefs with citations.
 
 ## Common Pitfalls
 
@@ -224,13 +206,8 @@ Design for model churn and new tools:
 - Keep authority gates and scopes independent of providers.
 - Store jobs and feedback as structured data for replay.
 
-## Conclusion
-
 AI copilots change how people decide and execute. When you show your work, bound authority, and make correction cheap, they become trusted teammates—not inscrutable oracles. Start with job-centric flows, preview-first actions, and visible evidence, then refine with instrumentation.
 
-**Related Articles:**
-- [Typography for Focus](./typography-for-focus.md)
-- [Visual Hierarchy That Guides](./visual-hierarchy-that-guides.md)
-- [Effective Frontend Architecture](../tech/effective-frontend-architecture.md)
+---
 
-
+*Related: [Typography for Focus](./typography-for-focus.md), [Visual Hierarchy That Guides](./visual-hierarchy-that-guides.md)*

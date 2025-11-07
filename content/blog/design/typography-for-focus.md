@@ -1,39 +1,17 @@
 ---
 date: 2025-10-14
-title: "Design Science Series #7: Typography for Focus - Designing Text That Guides Attention"
+title: "Focused Text"
 tags: [design, typography, focus, attention]
 image: /og/typography-for-focus.png
 category: design
+series: "Design Science Series"
+seriesOrder: 7
 description: "Master the art of typography that guides user attention and creates focus. Learn how to use type, spacing, and hierarchy to create reading experiences that are both beautiful and functional."
-sitemap:
-  loc: /design-science-series-7-typography-for-focus
-  lastmod: 2025-10-14
-  changefreq: monthly
-  priority: 0.9
 ---
 
-# Design Science Series #7: Typography for Focus - Designing Text That Guides Attention
-
-*This is the seventh article in the Design Science Series, exploring the intersection of design and science through practical applications and real-world case studies.*
-
-Typography is more than just choosing fonts and arranging text—it's about creating visual hierarchies that guide the eye and help readers focus on what matters most. In a world of constant distractions and information overload, the ability to create typography that focuses attention is a crucial skill for designers.
+Typography is more than choosing fonts and arranging text. It's about creating visual hierarchies that guide the eye and help readers focus on what matters most. In a world of constant distractions and information overload, the ability to create typography that focuses attention is a crucial skill for designers.
 
 The best typography doesn't just look good—it creates a clear path for the eye to follow, establishes visual priorities, and helps readers understand the relative importance of different information. When typography is designed for focus, it becomes a powerful tool for communication and user experience.
-
-## Table of Contents
-
-1. [The Psychology of Reading and Attention](#the-psychology-of-reading-and-attention)
-2. [Visual Hierarchy and Typography](#visual-hierarchy-and-typography)
-3. [Typeface Selection for Focus](#typeface-selection-for-focus)
-4. [Spacing and Rhythm](#spacing-and-rhythm)
-5. [Color and Contrast](#color-and-contrast)
-6. [Case Studies in Focus Typography](#case-studies-in-focus-typography)
-7. [Tools and Techniques](#tools-and-techniques)
-8. [Accessibility and Focus](#accessibility-and-focus)
-9. [Digital vs Print Considerations](#digital-vs-print-considerations)
-10. [Common Mistakes to Avoid](#common-mistakes-to-avoid)
-11. [Getting Started with Focus Typography](#getting-started-with-focus-typography)
-12. [The Future of Typography](#the-future-of-typography)
 
 ## The Psychology of Reading and Attention
 
@@ -45,188 +23,128 @@ The concept of "visual weight" is crucial for focus typography. Visual weight re
 
 Another important psychological principle is the "F-pattern" of reading, where readers scan horizontally across the top of content, then move down and scan horizontally again, creating an F-shaped pattern. This pattern is particularly relevant for web content and should inform how we structure typography for digital interfaces.
 
-The key insight is that typography for focus must work with human psychology, not against it. Instead of fighting natural reading patterns, we should design typography that enhances and guides these patterns to create more effective communication.
+The key insight: typography for focus must work with human psychology, not against it. Instead of fighting natural reading patterns, we should design typography that enhances and guides these patterns to create more effective communication.
 
 ## Visual Hierarchy and Typography
 
-Visual hierarchy is the foundation of focus typography. It's the system of organizing information in order of importance, using typography to create clear levels of attention and understanding. A well-designed hierarchy guides the reader's eye through content in a logical, purposeful way.
+Visual hierarchy is the foundation of effective typography. It's the system of organizing information in order of importance, using typographic elements to create clear levels of attention and understanding.
 
-The most effective typographic hierarchies use a limited number of distinct levels—typically three to five levels—to avoid confusion and maintain clarity. Each level should have a clear purpose and relationship to the others, creating a coherent system that readers can quickly understand and navigate.
+Size is one of the most powerful tools for creating hierarchy. Larger elements naturally draw more attention and should be used for the most important information. However, size relationships should be proportional and consistent to create a coherent system.
 
-Headlines and titles should have the highest visual weight, using larger sizes, bolder weights, or distinctive styling to immediately capture attention. These elements serve as entry points into the content and should clearly communicate the main message or topic.
+Font weight (bold, regular, light) can be used to create emphasis and distinction between different levels of information. Bold text draws attention and should be used sparingly for the most important information, while lighter weights can be used for supporting information.
 
-Subheadings and section headers should have secondary visual weight, providing structure and breaking up content into digestible chunks. They should be distinct from body text but not compete with the main headlines for attention.
+Color and contrast create visual separation and help elements stand out from their surroundings. High contrast makes elements more prominent, while low contrast creates subtle emphasis. The key is to use contrast strategically to support the overall hierarchy.
 
-Body text should have the lowest visual weight in terms of size and styling, but it should still be highly readable and comfortable to read. The goal is to create a smooth reading experience that doesn't strain the eyes or require excessive effort to process.
+Position and alignment create structure and relationships between elements. Elements that are aligned create visual connections, while elements that are positioned prominently (like the top-left corner) naturally draw more attention.
 
-The key principle is that visual hierarchy should reflect the information hierarchy. The most important information should have the highest visual weight, while supporting information should have lower visual weight but still be accessible and readable.
+The key principle: all typographic elements should work together to create a coherent system. Instead of using individual elements in isolation, we should consider how they work together to create clear levels of importance and attention.
 
 ## Typeface Selection for Focus
 
-The choice of typeface has a profound impact on focus and readability. Different typefaces have different personalities, characteristics, and optimal use cases. The right typeface can enhance focus and communication, while the wrong choice can create confusion and distraction.
+The choice of typeface has a significant impact on how readers process and understand text. Different typefaces have different personalities and characteristics that can support or undermine the overall hierarchy and communication goals.
 
-For headlines and titles, consider typefaces with strong character and personality that can command attention. These might include display typefaces, serif typefaces with distinctive characteristics, or sans-serif typefaces with strong geometric forms. The goal is to create immediate visual impact and establish the tone of the content.
+Serif typefaces are often associated with tradition, authority, and readability in long-form text. They can be effective for body text and formal content. Sans-serif typefaces are often associated with modernity, clarity, and simplicity. They can be effective for headlines and digital interfaces.
 
-For body text, prioritize readability and comfort over personality. The typeface should be easy to read in extended passages, with clear letterforms and appropriate spacing. Sans-serif typefaces are often preferred for digital interfaces, while serif typefaces can work well for print or longer-form content.
+The key is to choose typefaces that work well together and support the communication goals. This might include using a serif typeface for body text and a sans-serif typeface for headlines, or using a single typeface family with multiple weights and styles to create hierarchy.
 
-The relationship between headline and body typefaces is crucial. They should complement each other while maintaining clear distinction. This might mean using different weights of the same typeface family, or carefully pairing different typefaces that work well together.
+Consider the context and medium when selecting typefaces. Digital interfaces may require different typeface choices than print materials, and the intended viewing distance should influence typeface decisions. A poster viewed from across the room needs different typeface choices than a mobile app viewed up close.
 
-Consider the context and medium when selecting typefaces. Digital interfaces may require different considerations than print materials, and the intended audience and content type should influence the choice. A technical manual requires different typography than a creative portfolio or marketing material.
-
-The key insight is that typeface selection should support the communication goals and visual hierarchy. Instead of choosing typefaces based on personal preference, we should select typefaces that enhance focus and readability for the specific content and audience.
+The key insight: typeface selection should support the overall hierarchy and communication goals. Instead of choosing typefaces based on personal preference, we should choose typefaces that enhance readability and guide attention.
 
 ## Spacing and Rhythm
 
-Spacing is one of the most powerful tools for creating focus in typography. The space around and between elements creates visual breathing room, establishes relationships, and guides the eye through content. Well-designed spacing creates rhythm and flow that makes content easier to read and understand.
+Spacing is one of the most powerful tools for creating typography that focuses attention. The space around and between text elements creates visual breathing room, establishes relationships, and guides the eye through content.
 
-Line spacing (leading) is crucial for readability and focus. Too tight spacing can make text feel cramped and difficult to read, while too loose spacing can break the connection between lines and make content feel scattered. The optimal line spacing depends on the typeface, size, and context, but generally falls between 1.2 and 1.6 times the font size.
+Line spacing (leading) affects readability and hierarchy. Tighter line spacing creates a more compact, dense feel, while looser line spacing creates a more open, airy feel. The key is to find the right balance that supports readability and hierarchy.
 
-Paragraph spacing creates visual breaks that help readers process information in chunks. Consistent spacing between paragraphs creates rhythm and flow, while varying spacing can be used to create emphasis or group related information.
+Paragraph spacing creates visual separation and helps readers distinguish between different sections of content. Consistent paragraph spacing creates rhythm and flow that makes content easier to scan and understand.
 
-Letter spacing (tracking) and word spacing can be adjusted to improve readability and create visual emphasis. Tighter spacing can create a more compact, focused feel, while looser spacing can create a more open, relaxed feel. These adjustments should be subtle and purposeful.
+Letter spacing (tracking) can be used to create emphasis and distinction. Tighter letter spacing can create a more compact, unified feel, while looser letter spacing can create a more open, spacious feel. The key is to use letter spacing strategically to support the overall hierarchy.
 
-Margins and padding create the overall structure and breathing room for content. Generous margins can create a sense of luxury and focus, while tight margins can create a sense of urgency and density. The choice depends on the content type and communication goals.
+White space (or negative space) is crucial for creating focus and hierarchy. Generous white space around important elements makes them stand out and creates a sense of importance. However, white space should be used strategically to support the overall hierarchy, not just for aesthetic purposes.
 
-The key principle is that spacing should create visual rhythm and flow that supports the reading experience. Instead of arbitrary spacing decisions, we should use spacing strategically to guide attention and create comfortable reading experiences.
+The key insight: spacing should create visual rhythm and flow that supports the information architecture. Instead of arbitrary spacing decisions, we should use spacing strategically to guide attention and create comfortable reading experiences.
 
 ## Color and Contrast
 
-Color and contrast are powerful tools for creating focus in typography. They can be used to establish hierarchy, create emphasis, and guide the reader's attention to the most important information. However, they must be used carefully to avoid creating visual chaos or accessibility issues.
+Color and contrast are powerful tools for creating typography that focuses attention. They can be used to establish importance, group related information, and create visual flow through content.
 
-High contrast between text and background is essential for readability and focus. Black text on white background provides the highest contrast and is generally the most readable combination. However, other high-contrast combinations can work well when used thoughtfully.
+High contrast between text and background creates visual separation and helps important information stand out. Black text on white background provides the highest contrast and is generally the most readable combination. However, other high-contrast combinations can work well when used thoughtfully.
 
-Color can be used to create visual hierarchy and guide attention. Warm colors (reds, oranges, yellows) tend to advance and attract attention, while cool colors (blues, greens, purples) tend to recede and create calm. This can be used strategically to emphasize important information or create visual balance.
+Color can be used to create visual hierarchy and guide attention. Warm colors tend to advance and attract attention, while cool colors tend to recede and create calm. This can be used strategically to emphasize important information or create visual balance.
 
-The 60-30-10 rule is a useful guideline for color usage in typography. Use 60% of a dominant color (usually neutral), 30% of a secondary color, and 10% of an accent color. This creates visual balance while allowing for strategic use of color to create focus.
+The 60-30-10 rule is a useful guideline for color usage in typography. Use 60% of a dominant color (usually neutral), 30% of a secondary color, and 10% of an accent color. This creates visual balance while allowing for strategic use of color to create emphasis.
 
-Accessibility is crucial when using color for focus. Ensure that color is not the only way to convey important information, and that sufficient contrast ratios are maintained. The Web Content Accessibility Guidelines (WCAG) provide specific contrast ratio requirements that should be followed.
+Accessibility is crucial when using color for typography. Ensure that color is not the only way to convey important information, and that sufficient contrast ratios are maintained. The Web Content Accessibility Guidelines (WCAG) provide specific contrast ratio requirements that should be followed.
 
-The key insight is that color and contrast should enhance focus and readability, not create distraction or confusion. Instead of using color arbitrarily, we should use it strategically to support the visual hierarchy and communication goals.
-
-## Case Studies in Focus Typography
-
-Several organizations and projects have successfully used typography to create focus and guide attention. These case studies provide valuable insights into how to apply focus typography principles in practice.
-
-The New York Times website is an excellent example of typography designed for focus. The site uses a clear hierarchy with large, bold headlines that immediately capture attention, followed by smaller subheadings and body text. The spacing and contrast create a clear reading path that guides users through the content.
-
-Apple's marketing materials demonstrate how typography can create focus and elegance. The company uses clean, minimal typography with generous spacing and high contrast to create a sense of luxury and attention to detail. The typography supports the brand's focus on simplicity and quality.
-
-Medium's publishing platform is designed specifically for focus and readability. The platform uses typography that creates a distraction-free reading experience, with clear hierarchy, comfortable spacing, and high contrast. The design prioritizes the content and reading experience over visual flourishes.
-
-The key insight from these case studies is that effective focus typography requires a clear understanding of the content and audience. Instead of applying generic typography principles, we should tailor the typography to the specific needs and goals of the content and users.
-
-## Tools and Techniques
-
-Creating effective focus typography requires specific tools and techniques that can help designers make informed decisions about type, spacing, and hierarchy. These tools and techniques support the design process and help ensure consistent, effective results.
-
-Typography scales are essential for creating consistent hierarchy and relationships between different text elements. A well-designed scale uses mathematical relationships (such as the golden ratio or modular scale) to create harmonious proportions between different text sizes.
-
-Grid systems provide structure and consistency for typography layouts. They help ensure that text elements are properly aligned and spaced, creating visual order and rhythm that supports readability and focus.
-
-Type testing tools can help evaluate the readability and effectiveness of typography choices. These might include readability tests, contrast checkers, or user testing tools that provide feedback on typography effectiveness.
-
-Prototyping tools allow designers to test typography in context before final implementation. This might include tools for creating mockups, testing different typeface combinations, or evaluating typography across different devices and screen sizes.
-
-The key insight is that effective focus typography requires systematic approaches and tools that support the design process. Instead of relying on intuition alone, we should use tools and techniques that help us make informed decisions about typography choices.
-
-## Accessibility and Focus
-
-Accessibility is crucial for focus typography because it ensures that content is readable and usable by people with different abilities and needs. Typography that is accessible to everyone is more effective at creating focus and communication.
-
-Font size is a critical accessibility consideration. Text should be large enough to be readable without straining, typically at least 16px for body text in digital interfaces. However, the optimal size depends on the typeface, line length, and reading context.
-
-Contrast ratios must meet accessibility standards to ensure readability for people with visual impairments. The WCAG guidelines specify minimum contrast ratios of 4.5:1 for normal text and 3:1 for large text. These ratios ensure that text is readable for people with different levels of visual ability.
-
-Line length and spacing affect readability for people with dyslexia and other reading difficulties. Optimal line length is typically 45-75 characters, and line spacing should be at least 1.5 times the font size for better readability.
-
-Font choice can impact accessibility for people with dyslexia. Sans-serif typefaces with clear letterforms and adequate spacing are generally more readable for people with reading difficulties.
-
-The key principle is that accessible typography is more effective typography. Instead of treating accessibility as a constraint, we should recognize that accessible design principles often lead to better focus and communication for all users.
+The key principle: color and contrast should enhance hierarchy and readability, not create distraction or confusion. Instead of using color arbitrarily, we should use it strategically to support the overall information architecture.
 
 ## Digital vs Print Considerations
 
-Typography for focus works differently in digital and print contexts, and designers need to understand these differences to create effective solutions for each medium. The considerations for each medium should inform typography decisions and design approaches.
+Typography for digital interfaces requires different considerations than typography for print materials. Understanding these differences is crucial for creating effective typography that focuses attention in digital contexts.
 
-Digital typography must consider screen resolution, device capabilities, and user interaction patterns. Text must be readable on various screen sizes and resolutions, and typography should support user interactions like scrolling, clicking, and touch gestures.
+Screen resolution and pixel density affect how typefaces render. Digital interfaces require typefaces that are optimized for screen display, with clear letterforms that remain readable at different sizes and resolutions.
 
-Print typography can take advantage of higher resolution and more precise control over spacing and positioning. However, it must also consider the physical properties of paper, ink, and printing processes that can affect the appearance of typography.
+Responsive design requires typography that can adapt to different screen sizes and orientations. This might include fluid typography that scales with the viewport, or different typographic treatments for different device sizes.
 
-Digital typography often requires more flexibility and adaptability than print typography. Content may need to work across different devices and screen sizes, requiring responsive typography that can adapt to different contexts.
+Reading patterns differ between digital and print. Digital readers tend to scan more and read less deeply than print readers. This requires typography that is optimized for scanning and quick comprehension.
 
-Print typography can use more sophisticated techniques like kerning, ligatures, and fine-tuned spacing that may not be practical or necessary in digital contexts. However, these techniques should still support the overall goal of creating focus and readability.
+Interaction and animation can be used to guide attention in digital interfaces. This might include hover states, transitions, or animations that draw attention to important information or guide users through content.
 
-The key insight is that typography for focus should be tailored to the specific medium and context. Instead of applying the same principles to all media, we should consider the unique characteristics and requirements of each medium.
+The key insight: typography for digital interfaces requires different approaches than typography for print. Instead of applying print typography principles directly to digital interfaces, we need to adapt typography for the unique characteristics of digital media.
+
+## Case Studies in Focus Typography
+
+Several organizations and projects have successfully used typography to create clear information architecture and guide user attention.
+
+Apple's website is an excellent example of typography designed for focus. The site uses large, bold headlines that immediately capture attention, followed by smaller subheadings and body text. The spacing and contrast create a clear reading path that guides users through the content.
+
+The New York Times website demonstrates how typography can work with complex, information-dense content. The site uses clear typographic hierarchy, consistent spacing, and strategic use of color to create order and guide attention through news content.
+
+Google's search results page is a masterclass in typography for information architecture. The page uses clear typographic hierarchy, consistent spacing, and strategic use of color to help users quickly scan and understand search results.
+
+The key insight: effective typography requires a clear understanding of the content and user needs. Instead of applying generic typography principles, we should tailor the typography to the specific content and audience.
+
+## Tools and Techniques
+
+Creating effective typography requires specific tools and techniques that can help designers make informed decisions about typefaces, sizes, spacing, and other typographic elements.
+
+Typography scales are essential for creating consistent hierarchy and relationships between different text elements. A well-designed scale uses mathematical relationships to create harmonious proportions between different text sizes.
+
+Grid systems provide structure and consistency for typography layouts. They help ensure that text elements are properly aligned and spaced, creating visual order and rhythm that supports hierarchy and readability.
+
+Color palettes and contrast checkers can help ensure that color choices support hierarchy and accessibility. These tools help designers make informed decisions about color relationships and contrast ratios.
+
+Prototyping tools allow designers to test typography in context before final implementation. This might include tools for creating mockups, testing different typography approaches, or evaluating typography across different devices and screen sizes.
+
+The key insight: effective typography requires systematic approaches and tools that support the design process. Instead of relying on intuition alone, we should use tools and techniques that help us make informed decisions about typography choices.
 
 ## Common Mistakes to Avoid
 
-Several common mistakes can undermine the effectiveness of focus typography. Understanding these mistakes can help designers avoid them and create more effective typography solutions.
+Several common mistakes can undermine the effectiveness of typography for focus.
 
-One common mistake is using too many different typefaces or styles, which can create visual chaos and undermine hierarchy. A limited palette of typefaces and styles is more effective for creating focus and consistency.
+Using too many different typefaces, sizes, or styles can create visual chaos and undermine hierarchy. A limited palette of typographic elements is more effective for creating focus and consistency.
 
-Another mistake is ignoring the relationship between typography and content. Typography should support and enhance the content, not compete with it or distract from it. The typography choices should be appropriate for the content type and audience.
+Ignoring the relationship between typography and content can be a mistake. Typography should support and enhance the content, not compete with it or distract from it. The typography choices should be appropriate for the content type and audience.
 
-A third mistake is neglecting spacing and rhythm, which are crucial for creating focus and readability. Poor spacing can make even well-chosen typefaces difficult to read and understand.
+Neglecting accessibility considerations can exclude users and undermine the effectiveness of the typography. Accessible typography is more effective typography for all users.
 
-A fourth mistake is ignoring accessibility considerations, which can exclude users and undermine the effectiveness of the typography. Accessible typography is more effective typography for all users.
+Creating typography that is too subtle or too dramatic can be problematic. Typography should be clear enough to guide attention but not so dramatic that it creates visual chaos or distraction.
 
-The key insight is that effective focus typography requires attention to all aspects of typography, not just typeface selection. Instead of focusing on individual elements, we should consider how all typography elements work together to create focus and communication.
+The key insight: effective typography requires attention to all aspects of design, not just individual elements. Instead of focusing on individual elements, we should consider how all typographic elements work together to create clear information architecture.
 
-## Getting Started with Focus Typography
+## Getting Started
 
-Getting started with focus typography requires a systematic approach that considers all aspects of typography and their impact on focus and communication. Here are some practical steps for beginning to apply focus typography principles.
+Start by understanding the content and user needs. Analyze the content type, user goals, and information architecture to inform typography decisions. The typography should be appropriate for the specific content and audience.
 
-Start by understanding the content and audience. This means analyzing the content type, reading context, and user needs to inform typography decisions. The typography should be appropriate for the specific content and audience.
+Next, establish a clear typographic hierarchy. Identify the different levels of information and use typographic elements to create clear distinctions between them. The hierarchy should guide the user's attention to the most important information.
 
-Next, establish a clear visual hierarchy. This means identifying the different levels of information and using typography to create clear distinctions between them. The hierarchy should guide the reader's attention to the most important information.
+Then, choose typefaces and typographic elements that support the hierarchy and communication goals. Select sizes, weights, spacing, and colors that are appropriate for the content and audience, and that work well together to create a coherent system.
 
-Then, choose typefaces that support the hierarchy and communication goals. This means selecting typefaces that are appropriate for the content and audience, and that work well together to create a coherent system.
+Finally, test and refine the typography based on user feedback and behavior. Use user testing, analytics, or other methods to understand how the typography works in practice and how it can be improved.
 
-Finally, use spacing, color, and contrast strategically to enhance focus and readability. This means using these elements to support the visual hierarchy and create comfortable reading experiences.
-
-## The Future of Typography
-
-The future of typography will be shaped by new technologies, changing user behaviors, and evolving design practices. Understanding these trends can help designers prepare for the future and create typography that remains effective over time.
-
-One emerging trend is the use of variable fonts, which allow for more flexible and responsive typography. These fonts can adapt to different contexts and user needs, creating more personalized and effective reading experiences.
-
-Another trend is the integration of typography with artificial intelligence and machine learning. This might include AI-powered tools that can optimize typography for different users and contexts, or systems that can automatically adjust typography based on user behavior and preferences.
-
-A third trend is the development of new typography tools and methods that support more sophisticated design processes. This might include tools for testing typography effectiveness, or methods for creating more responsive and adaptive typography systems.
-
-The key insight is that the future of typography will require new skills and approaches. Instead of relying on traditional typography methods, we should prepare for new technologies and approaches that will shape the future of design.
-
-## The Bottom Line
-
-Typography for focus is about creating visual hierarchies that guide attention and help readers understand the relative importance of different information. It's about using typography strategically to enhance communication and create better user experiences.
-
-The most effective focus typography works with human psychology and reading patterns, not against them. It creates clear visual hierarchies, uses appropriate typefaces and spacing, and considers accessibility and context to create typography that is both beautiful and functional.
-
-The key is to start with a clear understanding of the content and audience, establish a coherent visual hierarchy, and use all typography elements strategically to support focus and communication. With practice and attention to detail, typography can become a powerful tool for creating focus and enhancing user experience.
-
-## Key Takeaways
-
-1. **Typography guides attention** - Use visual hierarchy to guide the reader's eye through content
-2. **Psychology matters** - Design typography that works with human reading patterns
-3. **Hierarchy creates focus** - Use clear levels of importance to guide attention
-4. **Spacing creates rhythm** - Use spacing strategically to create flow and readability
-5. **Contrast enhances readability** - Use color and contrast to support hierarchy and accessibility
-6. **Context is crucial** - Tailor typography to the specific content, audience, and medium
-7. **Accessibility improves effectiveness** - Accessible typography is more effective for all users
-8. **Tools support the process** - Use systematic approaches and tools to create consistent results
-
-**Remember:** The best typography doesn't just look good—it creates a clear path for the eye to follow and helps readers focus on what matters most.
+The best typography doesn't just look good—it creates a clear path through information and helps users understand what matters most. When typography is designed for focus, it becomes a powerful tool for communication and user experience.
 
 ---
 
-*This article explores the principles and practices of creating typography that guides attention and creates focus. The focus is on using typography strategically to enhance communication and create better user experiences.*
-
-**Sources and further reading:**
-
-- "The Elements of Typographic Style" by Robert Bringhurst
-- "Thinking with Type" by Ellen Lupton
-- "Typography" by Emil Ruder
-- "The New Typography" by Jan Tschichold
-- "Web Typography" by Richard Rutter
-- "On Web Typography" by Jason Santa Maria
-- "The Art of Typography" by Walter Tracy
-- "Typography: A Very Short Introduction" by Paul Luna
+*Further reading: "The Elements of Typographic Style" by Robert Bringhurst, "Thinking with Type" by Ellen Lupton, "On Web Typography" by Jason Santa Maria.*

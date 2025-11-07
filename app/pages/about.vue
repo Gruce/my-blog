@@ -1,34 +1,34 @@
 <template>
   <div class="max-w-2xl">
-    <header class="mb-10">
-      <div class="flex items-center gap-4 mb-6">
+    <header class="mb-8 sm:mb-10">
+      <div class="flex items-center gap-3 sm:gap-4 mb-6">
         <img 
           src="/hassan-alkhalidi.jpg" 
           alt="Hassan K. Al-Khalidi" 
-          class="w-20 h-20 rounded-full object-cover border border-zinc-800"
+          class="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border border-zinc-800 flex-shrink-0"
         />
-        <div>
-          <h1 class="text-3xl font-medium tracking-tight text-white/95">Hassan K. Al-Khalidi</h1>
-          <p class="text-zinc-400 mt-1 text-lg">Software Engineer</p>
-          <p class="text-zinc-500 mt-1 text-sm">gruceing • حسن الخالدي</p>
+        <div class="min-w-0 flex-1">
+          <h1 class="text-2xl sm:text-3xl font-medium tracking-tight text-white/95">Hassan K. Al-Khalidi</h1>
+          <p class="text-zinc-400 mt-1 text-base sm:text-lg">Software Engineer</p>
+          <p class="text-zinc-500 mt-1 text-xs sm:text-sm">gruceing • حسن الخالدي</p>
         </div>
       </div>
     </header>
 
-    <div class="space-y-8">
+    <div class="space-y-6 sm:space-y-8">
       <div>
-        <p class="text-zinc-300 leading-relaxed">
+        <p class="text-zinc-300 leading-relaxed text-sm sm:text-base">
           I'm a software engineer and entrepreneur from Basra, Iraq. Currently serving as CEO of DUDES Studio and co-founder of Enab عنب, 
           I bridge the gap between technology and traditional industries like oil & gas.
         </p>
-        <p class="text-zinc-300 leading-relaxed mt-4">
+        <p class="text-zinc-300 leading-relaxed mt-4 text-sm sm:text-base">
           With a background in both computer science and petroleum engineering, I've built systems ranging from GPS tracking solutions 
           to financial management platforms using Laravel, Vue.js, and Nuxt.js.
         </p>
       </div>
 
       <div>
-        <h2 class="text-xl font-medium text-white/95 mb-4">Background</h2>
+        <h2 class="text-lg sm:text-xl font-medium text-white/95 mb-3 sm:mb-4">Background</h2>
         <div class="space-y-4">
           <div>
             <h3 class="text-lg font-medium text-white/90">Education</h3>
@@ -44,8 +44,8 @@
       </div>
 
       <div>
-        <h2 class="text-xl font-medium text-white/95 mb-4">Connect</h2>
-        <div class="flex flex-wrap gap-4">
+        <h2 class="text-lg sm:text-xl font-medium text-white/95 mb-3 sm:mb-4">Connect</h2>
+        <div class="flex flex-wrap gap-3 sm:gap-4">
           <a 
             href="https://github.com/gruce" 
             target="_blank" 
@@ -83,8 +83,8 @@
       </div>
 
       <div>
-        <h2 class="text-xl font-medium text-white/95 mb-4">About this blog</h2>
-        <p class="text-zinc-300 leading-relaxed">
+        <h2 class="text-lg sm:text-xl font-medium text-white/95 mb-3 sm:mb-4">About this blog</h2>
+        <p class="text-zinc-300 leading-relaxed text-sm sm:text-base">
           I write about the intersection of technology and traditional industries, engineering practices, and insights from events I attend. 
           Having worked in both oil & gas and software development, I share perspectives on how technology can transform established sectors.
         </p>
