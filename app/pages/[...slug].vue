@@ -132,41 +132,220 @@ const expandedSeries = reactive<Record<string, boolean>>({})
 const sidebarOpen = ref(false)
 const sidebarScrollRef = ref<HTMLElement>()
 
-// Reactive window width for sidebar positioning
-// Default to desktop width to ensure margin is applied on initial render
-const windowWidth = ref(process.client ? window.innerWidth : 1920)
+// Sidebar dimming on mouse leave - default to dimmed
+const sidebarDimmed = ref(true)
+let dimTimeout: ReturnType<typeof setTimeout> | null = null
+let isInitialLoad = ref(true)
 
-// Ensure window width is set on mount
-onMounted(() => {
-  if (process.client) {
-    windowWidth.value = window.innerWidth
-    
-    // Update on resize
-    const handleResize = () => {
-      windowWidth.value = window.innerWidth
+// Computed: check if we're on desktop
+const isDesktop = computed(() => {
+  if (!isClient.value) return false
+  return windowWidth.value >= 1024
+})
+
+// Computed: check if sidebar should be dimmed
+// On SSR or initial load, default to dimmed if on desktop
+const isDimmed = computed(() => {
+  if (!isClient.value) {
+    // SSR: default to dimmed
+    return true
+  }
+  return isDesktop.value && sidebarDimmed.value
+})
+
+// Computed: base text color class when dimmed
+const dimmedTextClass = computed(() => isDimmed.value ? 'text-zinc-500' : '')
+
+// Computed: header name class
+const headerNameClass = computed(() => {
+  if (isDimmed.value) return 'text-zinc-500'
+  return 'text-white/95 group-hover:text-white'
+})
+
+// Computed: header subtitle class
+const headerSubtitleClass = computed(() => {
+  if (isDimmed.value) return 'text-zinc-500'
+  return 'text-zinc-400 group-hover:text-zinc-300'
+})
+
+// Computed: section button class
+const sectionButtonClass = computed(() => {
+  if (isDimmed.value) return 'text-zinc-500'
+  return 'text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/50'
+})
+
+// Computed: section count class
+const sectionCountClass = computed(() => {
+  if (isDimmed.value) return 'text-zinc-500'
+  return 'text-zinc-600'
+})
+
+// Computed: series button class
+const seriesButtonClass = computed(() => {
+  if (isDimmed.value) return 'text-zinc-500'
+  return 'text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/50'
+})
+
+// Function to get home link class
+const getHomeLinkClass = (isActive: boolean) => {
+  const base = {
+    'bg-zinc-800/50 font-medium': isActive,
+    'hover:bg-zinc-900/50': !isActive
+  }
+  if (isDimmed.value) {
+    return { ...base, 'text-zinc-500': true }
+  }
+  return {
+    ...base,
+    'text-zinc-100': isActive,
+    'text-zinc-500 hover:text-zinc-100': !isActive
+  }
+}
+
+// Function to get article link class
+const getArticleLinkClass = (isActive: boolean, isStandalone: boolean = false) => {
+  const base = {
+    'bg-zinc-800/50 font-medium': isActive,
+    'hover:bg-zinc-900/50': !isActive
+  }
+  if (isDimmed.value) {
+    return { ...base, 'text-zinc-500': true }
+  }
+  return {
+    ...base,
+    [isStandalone ? 'text-white' : 'text-zinc-100']: isActive,
+    'text-zinc-500 hover:text-zinc-100': !isActive
+  }
+}
+
+const handleSidebarMouseEnter = () => {
+  // Only handle on desktop
+  if (isDesktop.value) {
+    // On initial load, wait a bit before allowing brightening to ensure it starts dimmed
+    if (isInitialLoad.value) {
+      setTimeout(() => {
+        isInitialLoad.value = false
+      }, 100)
+      return
     }
-    window.addEventListener('resize', handleResize)
-    
-    // Cleanup on unmount
-    onUnmounted(() => {
-      window.removeEventListener('resize', handleResize)
-    })
+    sidebarDimmed.value = false
+    if (dimTimeout) {
+      clearTimeout(dimTimeout)
+      dimTimeout = null
+    }
+  }
+}
+
+const handleSidebarMouseLeave = () => {
+  // Only handle on desktop
+  if (isDesktop.value) {
+    if (dimTimeout) {
+      clearTimeout(dimTimeout)
+    }
+    dimTimeout = setTimeout(() => {
+      sidebarDimmed.value = true
+    }, 2000) // 2 seconds
+  }
+}
+
+// Cleanup timeout on unmount
+onUnmounted(() => {
+  if (dimTimeout) {
+    clearTimeout(dimTimeout)
   }
 })
 
-// Computed style for sidebar positioning
-const sidebarStyle = computed(() => {
-  if (process.client && windowWidth.value >= 1024) {
-    return { position: 'sticky', top: '0' }
+// Check if we're on client side
+const isClient = ref(false)
+
+// Reactive window width for sidebar positioning
+// Default to desktop width to ensure margin is applied on initial render
+const windowWidth = ref(1920)
+
+// Ensure window width is set on mount and sidebar is dimmed
+onMounted(() => {
+  // Set client flag
+  isClient.value = true
+  // Ensure sidebar starts dimmed on page load - set it immediately
+  sidebarDimmed.value = true
+  
+  windowWidth.value = window.innerWidth
+  
+  // Force dimmed state after next tick to ensure it's applied
+  nextTick(() => {
+    sidebarDimmed.value = true
+    // Trigger reactivity update
+    if (windowWidth.value >= 1024) {
+      sidebarDimmed.value = true
+    }
+  })
+  
+  // After a short delay, allow mouse interactions
+  setTimeout(() => {
+    isInitialLoad.value = false
+  }, 500)
+  
+  // Update on resize
+  const handleResize = () => {
+    windowWidth.value = window.innerWidth
   }
-  return { position: 'fixed' }
+  window.addEventListener('resize', handleResize)
+  
+  // Cleanup on unmount
+  onUnmounted(() => {
+    window.removeEventListener('resize', handleResize)
+  })
+})
+
+// Computed style for sidebar opacity and positioning
+const sidebarStyle = computed(() => {
+  // Add opacity for dimming (only on desktop)
+  // Text colors will be changed via classes based on dim state
+  // Default to dimmed (0.5 opacity) on desktop, full opacity on mobile
+  let opacity = '1'
+  if (isClient.value) {
+    if (windowWidth.value >= 1024) {
+      // Desktop: use dimmed state
+      opacity = sidebarDimmed.value ? '0.5' : '1'
+    }
+  } else {
+    // SSR: default to dimmed for desktop
+    opacity = '0.5'
+  }
+  
+  // For desktop, ensure sticky positioning
+  // Sticky positioning requires:
+  // 1. position: sticky
+  // 2. top value (or other offset)
+  // 3. Parent must allow scrolling (no overflow: hidden)
+  // 4. Parent must be taller than sticky element
+  const style: Record<string, string> = {
+    opacity,
+    transition: 'opacity 0.3s ease-in-out'
+  }
+  
+  // Only apply sticky on desktop, not mobile
+  if (isClient.value && windowWidth.value >= 1024) {
+    // CRITICAL: For sticky to work, we must ensure:
+    // 1. position: sticky is set
+    // 2. top value is defined
+    // 3. No parent has overflow: hidden/auto/scroll
+    // 4. Parent container must be taller than sticky element
+    style.position = 'sticky'
+    style.top = '0'
+    style.alignSelf = 'flex-start'
+    // Use height instead of maxHeight to ensure proper sticky behavior
+    style.height = '100vh'
+  }
+  
+  return style
 })
 
 
 // Prevent body scroll when sidebar is open on mobile
 let scrollPosition = 0
 watch(sidebarOpen, (isOpen) => {
-  if (process.client && window.innerWidth < 1024) {
+  if (isClient.value && window.innerWidth < 1024) {
     if (isOpen) {
       // Save scroll position
       scrollPosition = window.pageYOffset || document.documentElement.scrollTop
@@ -193,7 +372,7 @@ watch(sidebarOpen, (isOpen) => {
 let touchMoveHandler: ((e: TouchEvent) => void) | null = null
 
 watchEffect(() => {
-  if (process.client && sidebarScrollRef.value) {
+  if (isClient.value && sidebarScrollRef.value) {
     touchMoveHandler = (e: TouchEvent) => {
       // Only stop propagation for touchmove to prevent body scroll
       // Allow clicks and other events to work normally
@@ -213,7 +392,7 @@ watchEffect(() => {
 
 // Cleanup on unmount
 onUnmounted(() => {
-  if (process.client) {
+  if (isClient.value) {
     document.body.style.position = ''
     document.body.style.top = ''
     document.body.style.width = ''
@@ -396,7 +575,7 @@ const { gtag } = useGtag()
 
 // Track article view when component mounts
 onMounted(() => {
-  if (page.value && process.client) {
+  if (page.value && isClient.value) {
     try {
       gtag('event', 'view_item', {
         item_id: page.value.title,
@@ -414,7 +593,7 @@ onMounted(() => {
 
 // Track scroll depth
 const handleScroll = () => {
-  if (!articleRef.value || !process.client) return
+  if (!articleRef.value || !isClient.value) return
   
   try {
     const scrollTop = articleRef.value.scrollTop
@@ -490,37 +669,81 @@ useHead(() => ({
 
 <template>
   <template v-if="page">
-    <div class="flex relative min-h-screen">
-      <!-- Mobile Overlay -->
-      <div 
-        v-if="sidebarOpen"
-        class="fixed inset-0 bg-black/50 z-40 lg:hidden"
-        @click="sidebarOpen = false"
-        @touchstart="(e: TouchEvent) => { e.preventDefault(); sidebarOpen = false; }"
-      ></div>
+    <!-- Mobile Overlay -->
+    <div 
+      v-if="sidebarOpen"
+      class="fixed inset-0 bg-black/50 z-40 lg:hidden"
+      @click="sidebarOpen = false"
+      @touchstart="(e: TouchEvent) => { e.preventDefault(); sidebarOpen = false; }"
+    ></div>
 
+    <div class="flex lg:items-start" style="overflow: visible;">
       <!-- Sidebar - Hidden on mobile, visible on desktop -->
       <aside 
-        class="left-0 h-screen w-80 border-r border-zinc-800 bg-zinc-950 flex-shrink-0 z-50 transition-transform duration-300"
+        class="w-80 border-r border-zinc-800 bg-zinc-950 flex-shrink-0 z-50 transition-all duration-300"
         :class="{ 
-          '-translate-x-full lg:translate-x-0': !sidebarOpen,
-          'translate-x-0': sidebarOpen
+          '-translate-x-full fixed left-0 h-screen': !sidebarOpen && windowWidth < 1024,
+          'translate-x-0 fixed left-0 h-screen': sidebarOpen && windowWidth < 1024
         }"
         :style="sidebarStyle"
         @click.stop
+        @mouseenter="handleSidebarMouseEnter"
+        @mouseleave="handleSidebarMouseLeave"
       >
         <div 
           ref="sidebarScrollRef"
-          class="h-full w-full overflow-y-auto p-4"
+          class="w-full overflow-y-auto p-4"
+          :class="{
+            'h-full': windowWidth < 1024,
+            'h-screen': windowWidth >= 1024
+          }"
           style="max-height: 100vh; -webkit-overflow-scrolling: touch; touch-action: auto;"
         >
+        <!-- Sidebar Header -->
+        <div class="mb-6 pb-6 border-b border-zinc-800">
+      <NuxtLink 
+        to="/" 
+            @click="sidebarOpen = false"
+            class="flex items-center gap-3 group"
+          >
+            <img 
+              src="/hassan-alkhalidi.jpg" 
+              alt="Hassan K. Al-Khalidi" 
+              class="w-12 h-12 rounded-lg object-cover border border-zinc-800 flex-shrink-0 group-hover:border-zinc-700 transition-colors"
+            />
+            <div class="min-w-0 flex-1">
+              <h2 class="text-sm font-medium tracking-tight transition-colors" :class="headerNameClass">Hassan K. Al-Khalidi</h2>
+              <p class="text-xs mt-0.5 transition-colors" :class="headerSubtitleClass">CEO, DUDES Studio</p>
+            </div>
+      </NuxtLink>
+    </div>
+
         <nav class="space-y-0.5">
+          <!-- Home Link -->
+          <NuxtLink
+            to="/"
+            @click="sidebarOpen = false"
+            class="flex items-center gap-2 py-1.5 pl-1 text-sm rounded-md transition-colors"
+            :class="getHomeLinkClass($route.path === '/')"
+          >
+            <svg
+              class="w-4 h-4 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            <span class="flex-1">Home</span>
+          </NuxtLink>
+          
           <template v-for="section in sections" :key="section.key">
             <!-- Section Folder -->
             <div>
               <button
                 @click="toggleSection(section.key)"
-                class="w-full flex items-center gap-2 py-2 text-sm text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/50 rounded-md transition-colors"
+                class="w-full flex items-center gap-2 py-2 text-sm rounded-md transition-colors"
+                :class="sectionButtonClass"
                 type="button"
               >
                 <svg
@@ -541,7 +764,7 @@ useHead(() => ({
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
                 </svg>
                 <span class="flex-1 text-left">{{ section.title }}</span>
-                <span class="text-xs text-zinc-600">({{ section.items.length }})</span>
+                <span class="text-xs transition-colors" :class="sectionCountClass">({{ section.items.length }})</span>
               </button>
               
               <!-- Section Content (Series and Standalone Posts) -->
@@ -551,7 +774,8 @@ useHead(() => ({
                   <div v-if="'seriesName' in item">
                     <button
                       @click.stop="toggleSeries(item.seriesName)"
-                      class="w-full flex items-center gap-2 py-1.5 text-sm text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/50 rounded-md transition-colors"
+                      class="w-full flex items-center gap-2 py-1.5 text-sm rounded-md transition-colors"
+                      :class="seriesButtonClass"
                       type="button"
                     >
                       <svg
@@ -572,7 +796,7 @@ useHead(() => ({
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
                       </svg>
                       <span class="flex-1 text-left">{{ item.seriesName }}</span>
-                      <span class="text-xs text-zinc-600">({{ item.items.length }})</span>
+                      <span class="text-xs transition-colors" :class="sectionCountClass">({{ item.items.length }})</span>
                     </button>
                     
                     <!-- Series Articles -->
@@ -582,8 +806,8 @@ useHead(() => ({
                         :key="post.id"
                         :to="post.path"
                         @click="sidebarOpen = false"
-                        class="flex items-center gap-2 py-1.5 pl-1 text-sm text-zinc-500 hover:text-zinc-100 hover:bg-zinc-900/50 rounded-md transition-colors"
-                        :class="{ 'text-zinc-100 bg-zinc-900/50': $route.path === post.path }"
+                        class="flex items-center gap-2 py-1.5 pl-1 text-sm rounded-md transition-colors"
+                        :class="getArticleLinkClass($route.path === post.path)"
                       >
                         <svg
                           class="w-4 h-4 flex-shrink-0"
@@ -599,12 +823,12 @@ useHead(() => ({
                   </div>
                   
                   <!-- Standalone Post -->
-      <NuxtLink 
+                  <NuxtLink
                     v-else
                     :to="item.path"
                     @click="sidebarOpen = false"
-                    class="flex items-center gap-2 py-1.5 pl-1 text-sm text-zinc-500 hover:text-zinc-100 hover:bg-zinc-900/50 rounded-md transition-colors"
-                    :class="{ 'text-zinc-100 bg-zinc-900/50': $route.path === item.path }"
+                    class="flex items-center gap-2 py-1.5 pl-1 text-sm rounded-md transition-colors"
+                    :class="getArticleLinkClass($route.path === item.path, true)"
                   >
                     <svg
                       class="w-4 h-4 flex-shrink-0"
@@ -626,19 +850,9 @@ useHead(() => ({
 
       <!-- Main Content -->
       <div class="flex-1 w-full">
-        <div class="flex flex-col max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
-          <!-- Back to Home Button and Sidebar Toggle -->
-          <div class="mb-6 flex justify-between items-center">
-            <NuxtLink to="/"
-              class="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-white transition-colors duration-200">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-        </svg>
-              <span class="hidden sm:inline">Back to Home</span>
-              <span class="sm:hidden">Home</span>
-      </NuxtLink>
-
-            <!-- Mobile Sidebar Toggle -->
+        <div class="flex flex-col max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- Mobile Sidebar Toggle -->
+          <div class="mb-6 flex justify-end">
             <button
               @click="sidebarOpen = !sidebarOpen"
               class="lg:hidden inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-white transition-colors duration-200"
@@ -665,7 +879,7 @@ useHead(() => ({
               </svg>
               <span class="hidden sm:inline">{{ sidebarOpen ? 'Hide' : 'Show' }} Navigation</span>
             </button>
-    </div>
+          </div>
 
           <!-- Date and Reading Time -->
           <div class="mb-6 flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm text-zinc-500">
