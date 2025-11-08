@@ -4,11 +4,10 @@ title: "New Worlds"
 tags: [design, virtual-reality, technology, future]
 image: /og/unreal-design-virtual-reality.png
 category: design
-series: "Design Science Series"
 seriesOrder: 4
 description: "Virtual reality and immersive technologies are reshaping design. Create virtual experiences that have real-world impact and meaning."
 sitemap:
-  loc: /unreal-design-virtual-reality
+  loc: /design-science-series/unreal-design-virtual-reality
   lastmod: 2025-10-14
   changefreq: monthly
   priority: 0.8

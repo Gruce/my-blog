@@ -4,11 +4,10 @@ title: "All Life"
 tags: [design, biology, futures, posthuman]
 image: /og/other-biological-futures-design.png
 category: design
-series: "Design Science Series"
 seriesOrder: 3
 description: "Think beyond human-centered design. Consider the needs of all living systems in our design decisions."
 sitemap:
-  loc: /other-biological-futures-design
+  loc: /design-science-series/other-biological-futures-design
   lastmod: 2025-10-14
   changefreq: monthly
   priority: 0.8

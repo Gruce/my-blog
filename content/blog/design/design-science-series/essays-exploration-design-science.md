@@ -4,11 +4,10 @@ title: "Design Research"
 tags: [design, science, research, exploration]
 image: /og/essays-exploration-design-science.png
 category: design
-series: "Design Science Series"
 seriesOrder: 5
 description: "The intersection of design and science is a fertile ground for exploration and discovery."
 sitemap:
-  loc: /essays-exploration-design-science
+  loc: /design-science-series/essays-exploration-design-science
   lastmod: 2025-10-14
   changefreq: monthly
   priority: 0.8

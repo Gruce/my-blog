@@ -14,15 +14,44 @@ const { data: page } = await useAsyncData(`page-${route.path}`, () => {
 // Fetch all posts for sidebar navigation
 const { data: posts } = await useAsyncData<PostItem[]>('blog-sidebar', async () => {
   const list = await queryCollection('blog').order('date', 'DESC').all()
-  return list.map((p: any) => ({
-    id: p.id,
-    path: p.path,
-    title: p.title,
-    date: p.date,
-    category: (p.category ?? 'tech') as BlogCategory,
-    series: p.series,
-    seriesOrder: p.seriesOrder
-  }))
+  return list.map((p: any) => {
+    // Use _path if available (Nuxt Content v3+), otherwise use path
+    const articlePath = p._path || p.path || ''
+    
+    // Detect series from folder structure if not explicitly set
+    const pathParts = articlePath.replace(/^\/|\/$/g, '').split('/').filter((part: string) => part.length > 0)
+    let seriesFromFolder: string | null = null
+    
+    // Skip 'blog' prefix if present
+    const startIndex = pathParts[0] === 'blog' ? 1 : 0
+    const relevantParts = pathParts.slice(startIndex)
+    
+    // If path has 3+ parts: category/folder/article
+    if (relevantParts.length > 2 && relevantParts[1]) {
+      seriesFromFolder = relevantParts[1]
+    }
+    // If path has 2 parts and first part looks like a series folder
+    else if (relevantParts.length === 2 && relevantParts[0] && relevantParts[0].includes('-')) {
+      const categoryNames = ['design', 'tech', 'startup', 'events']
+      if (!categoryNames.includes(relevantParts[0])) {
+        seriesFromFolder = relevantParts[0]
+      }
+    }
+    
+    const seriesName = p.series || (seriesFromFolder 
+      ? seriesFromFolder.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
+      : null)
+    
+    return {
+      id: p.id || p._id || articlePath,
+      path: articlePath,
+      title: p.title,
+      date: p.date,
+      category: (p.category ?? 'tech') as BlogCategory,
+      series: seriesName,
+      seriesOrder: p.seriesOrder
+    }
+  })
 })
 
 // Use composables
@@ -172,7 +201,7 @@ useHead(() => ({
         />
 
         <ArticleSeriesNavigation
-          v-if="page?.series && seriesArticles && seriesArticles.length > 0"
+          v-if="seriesArticles && seriesArticles.length > 0"
           :page="page"
           :series-articles="seriesArticles"
           :previous-article="previousArticle"

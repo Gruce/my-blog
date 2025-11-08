@@ -4,11 +4,10 @@ title: "Clear Paths"
 tags: [design, hierarchy, information, architecture]
 image: /og/visual-hierarchy-that-guides.png
 category: design
-series: "Design Science Series"
 seriesOrder: 8
 description: "Visual hierarchy guides attention. It shows what matters most and creates clear paths through information."
 sitemap:
-  loc: /visual-hierarchy-that-guides
+  loc: /design-science-series/visual-hierarchy-that-guides
   lastmod: 2025-10-14
   changefreq: monthly
   priority: 0.8

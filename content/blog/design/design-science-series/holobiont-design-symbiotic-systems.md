@@ -4,11 +4,10 @@ title: "Together"
 tags: [design, biology, systems, symbiosis]
 image: /og/holobiont-design-symbiotic-systems.png
 category: design
-series: "Design Science Series"
 seriesOrder: 2
 description: "Success comes from mutual benefit, not individual optimization. Create symbiotic systems that thrive through interdependence."
 sitemap:
-  loc: /holobiont-design-symbiotic-systems
+  loc: /design-science-series/holobiont-design-symbiotic-systems
   lastmod: 2025-10-14
   changefreq: monthly
   priority: 0.8

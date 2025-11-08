@@ -4,11 +4,10 @@ title: "Focused Text"
 tags: [design, typography, focus, attention]
 image: /og/typography-for-focus.png
 category: design
-series: "Design Science Series"
 seriesOrder: 7
 description: "Typography guides attention. It creates clear paths through text and helps readers focus on what matters most."
 sitemap:
-  loc: /typography-for-focus
+  loc: /design-science-series/typography-for-focus
   lastmod: 2025-10-14
   changefreq: monthly
   priority: 0.8

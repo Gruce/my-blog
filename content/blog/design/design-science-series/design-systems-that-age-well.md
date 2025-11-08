@@ -4,11 +4,10 @@ title: "Lasting Systems"
 tags: [design, systems, longevity, evolution]
 image: /og/design-systems-that-age-well.png
 category: design
-series: "Design Science Series"
 seriesOrder: 6
 description: "Design systems that evolve gracefully over time remain relevant and useful as technology and user needs change."
 sitemap:
-  loc: /design-systems-that-age-well
+  loc: /design-science-series/design-systems-that-age-well
   lastmod: 2025-10-14
   changefreq: monthly
   priority: 0.8

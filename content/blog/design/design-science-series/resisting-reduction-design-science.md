@@ -4,11 +4,10 @@ title: "Whole Systems"
 tags: [design, science, complexity, systems]
 image: /og/resisting-reduction-design-science.png
 category: design
-series: "Design Science Series"
 seriesOrder: 1
 description: "Complex systems can't be broken into parts. They must be understood as whole systems where everything connects."
 sitemap:
-  loc: /resisting-reduction-design-science
+  loc: /design-science-series/resisting-reduction-design-science
   lastmod: 2025-10-14
   changefreq: monthly
   priority: 0.8

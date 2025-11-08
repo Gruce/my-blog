@@ -44,8 +44,8 @@
     <header class="mb-4">
       <!-- Title -->
       <div class="flex flex-col">
-        <div v-if="page.series" class="text-xs sm:text-sm text-zinc-500 font-normal mb-1">
-          {{ page.series }}
+        <div v-if="pageSeries" class="text-xs sm:text-sm text-zinc-500 font-normal mb-1">
+          {{ pageSeries }}
         </div>
         <h1 class="text-xl sm:text-xl md:text-2xl font-medium tracking-tight text-white/95 leading-tight">
           <span v-if="page.seriesOrder" class="text-zinc-500 font-normal mr-2">{{ page.seriesOrder }}.</span>
@@ -77,6 +77,23 @@ const props = defineProps<{
 
 const headerNameClassValue = computed(() => props.headerNameClass ? toValue(props.headerNameClass) : '')
 const headerSubtitleClassValue = computed(() => props.headerSubtitleClass ? toValue(props.headerSubtitleClass) : '')
+
+/**
+ * Get series name from page (explicit or from folder structure)
+ */
+const pageSeries = computed(() => {
+  if (props.page?.series) return props.page.series
+  
+  // Detect from folder structure
+  const path = props.page?.path || ''
+  const pathParts = path.replace(/^\/|\/$/g, '').split('/')
+  if (pathParts.length > 2) {
+    const folderName = pathParts[1]
+    return folderName.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
+  }
+  
+  return null
+})
 
 const emit = defineEmits<{
   'toggle-sidebar': []
