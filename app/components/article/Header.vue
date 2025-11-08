@@ -11,7 +11,7 @@
 
     <div class="flex justify-between items-center">
       <!-- Date and Reading Time -->
-      <div class="mb-6 flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm text-zinc-500">
+      <div class="mb-4 flex flex-wrap items-center gap-2 text-xs sm:text-sm text-zinc-500">
         <time v-if="page.date" :datetime="page.date" class="tabular-nums">
           {{ new Date(page.date).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: '2-digit' }) }}
         </time>
@@ -26,7 +26,7 @@
       </div>
 
       <!-- Mobile Sidebar Toggle -->
-      <div class="mb-6 flex justify-end">
+      <div class="mb-4 flex justify-end">
         <button @click="$emit('toggle-sidebar')"
           class="lg:hidden inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-white transition-colors duration-200"
           type="button" aria-label="Toggle navigation">
@@ -44,8 +44,11 @@
     <header class="mb-4">
       <!-- Title -->
       <div class="flex flex-col">
-        <div v-if="parentFolderName" class="text-xs sm:text-sm text-zinc-500 font-normal mb-1">
-          {{ parentFolderName }}
+        <div v-if="parentFolderParts.length > 0" class="text-xs sm:text-sm text-zinc-500 font-normal mb-1 leading-tight">
+          <span v-for="(folder, index) in parentFolderParts" :key="index">
+            <span>{{ folder }}</span>
+            <span v-if="index < parentFolderParts.length - 1" class="mx-1 text-zinc-600">/</span>
+          </span>
         </div>
         <h1 class="text-xl sm:text-xl md:text-2xl font-medium tracking-tight text-white/95 leading-tight">
           <span v-if="page.seriesOrder" class="text-zinc-500 font-normal mr-2">{{ page.seriesOrder }}.</span>
@@ -55,7 +58,7 @@
     </header>
 
     <!-- Tags -->
-    <div v-if="page.tags?.length" class="mt-3 flex flex-wrap gap-1.5 sm:gap-2">
+    <div v-if="page.tags?.length" class="mt-2 flex flex-wrap gap-1.5 sm:gap-2">
       <span v-for="tag in page.tags" :key="tag"
         class="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-md bg-zinc-800/50 text-zinc-300 text-xs font-medium">
         {{ tag }}
@@ -79,14 +82,14 @@ const headerNameClassValue = computed(() => props.headerNameClass ? toValue(prop
 const headerSubtitleClassValue = computed(() => props.headerSubtitleClass ? toValue(props.headerSubtitleClass) : '')
 
 /**
- * Get all nested parent folder names from path
- * For path like /dudes-studio/core-services/web-mobile-development, returns "Dudes Studio > Core Services"
- * For path like /design/design-science-series/article, returns "Design > Design Science Series"
- * For path like /tech/article, returns "Tech"
+ * Get all nested parent folder names from path as an array
+ * For path like /dudes-studio/core-services/web-mobile-development, returns ["Dudes Studio", "Core Services"]
+ * For path like /design/design-science-series/article, returns ["Design", "Design Science Series"]
+ * For path like /tech/article, returns ["Tech"]
  */
-const parentFolderName = computed(() => {
+const parentFolderParts = computed(() => {
   const path = props.page?.path || ''
-  if (!path) return null
+  if (!path) return []
   
   // Remove leading/trailing slashes and split
   const pathParts = path.replace(/^\/|\/$/g, '').split('/').filter((p: string) => p.length > 0)
@@ -100,16 +103,21 @@ const parentFolderName = computed(() => {
     // Get all parts except the last one (filename)
     const parentFolders = relevantParts.slice(0, -1)
     
-    // Convert each folder name to readable format and join with separator
-    const readableFolders = parentFolders.map((folder: string) => {
+    // Convert each folder name to readable format
+    return parentFolders.map((folder: string) => {
       return folder.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
     })
-    
-    return readableFolders.join(' > ')
   }
   
   // If we only have 1 part, there's no parent folder to show
-  return null
+  return []
+})
+
+/**
+ * Get parent folder name as a string (for backwards compatibility if needed)
+ */
+const parentFolderName = computed(() => {
+  return parentFolderParts.value.length > 0 ? parentFolderParts.value.join(' / ') : null
 })
 
 const emit = defineEmits<{
