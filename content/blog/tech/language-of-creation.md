@@ -5,6 +5,11 @@ tags: [ai, development, creativity]
 image: /og/language-of-creation.png
 category: tech
 description: "AI is transforming software development from syntax-driven coding to intent-based creation. Developers become composers of digital experiences."
+sitemap:
+  loc: /language-of-creation
+  lastmod: 2025-06-17
+  changefreq: monthly
+  priority: 0.8
 ---
 
 A few tools don't just speed us up—they change how we work. For years we told computers exactly what to do through precise syntax and rigid commands. Now they can meet us halfway, understanding our intent and helping us create in ways that were previously impossible.

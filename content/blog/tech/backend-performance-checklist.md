@@ -4,6 +4,11 @@ title: "Backend Performance"
 tags: [backend, performance, scaling, optimization, monitoring]
 category: tech
 description: "Backend performance isn't just about speed—it's about building systems that deliver consistent, reliable experiences to users while efficiently utilizing resources."
+sitemap:
+  loc: /backend-performance-checklist
+  lastmod: 2025-10-25
+  changefreq: monthly
+  priority: 0.9
 ---
 
 Backend performance isn't just about speed—it's about building systems that deliver consistent, reliable experiences to users while efficiently utilizing resources.

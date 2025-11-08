@@ -4,6 +4,11 @@ title: "Engineering Operating System"
 tags: [engineering, teams, development]
 category: tech
 description: "The difference between great engineering teams and mediocre ones isn't talent—it's systems. Build systems that eliminate friction, accelerate decision-making, and create sustainable momentum."
+sitemap:
+  loc: /engineering-operating-system
+  lastmod: 2025-05-30
+  changefreq: monthly
+  priority: 0.8
 ---
 
 The difference between great engineering teams and mediocre ones isn't talent—it's systems. While most organizations respond to shipping delays with more meetings, more process, and more people, the most effective teams focus on something entirely different: reducing drag.

@@ -5,6 +5,11 @@ tags: [startup, strategy, vision]
 image: /og/mission-vision-strategy-young-builders.png
 category: startup
 description: "Think of your product like a journey. You need three things: mission (why), vision (where), and strategy (how)."
+sitemap:
+  loc: /mission-vision-strategy-for-young-builders
+  lastmod: 2025-09-23
+  changefreq: monthly
+  priority: 0.8
 ---
 
 Think of your product like a journey. You need three things to go far:

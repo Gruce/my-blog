@@ -7,6 +7,11 @@ category: design
 series: "Design Science Series"
 seriesOrder: 8
 description: "Visual hierarchy guides attention. It shows what matters most and creates clear paths through information."
+sitemap:
+  loc: /visual-hierarchy-that-guides
+  lastmod: 2025-10-14
+  changefreq: monthly
+  priority: 0.8
 ---
 
 Visual hierarchy is the foundation of effective design. It organizes information by importance, using visual elements to create clear levels of attention. When done well, it guides users naturally through content.

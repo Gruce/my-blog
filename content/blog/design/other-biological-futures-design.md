@@ -7,6 +7,11 @@ category: design
 series: "Design Science Series"
 seriesOrder: 3
 description: "Think beyond human-centered design. Consider the needs of all living systems in our design decisions."
+sitemap:
+  loc: /other-biological-futures-design
+  lastmod: 2025-10-14
+  changefreq: monthly
+  priority: 0.8
 ---
 
 Human-centered design has been the dominant approach for decades. Understand human needs, behaviors, and experiences. Create products and services that are useful, usable, and desirable for humans. This approach has led to many successful products. But it has also created significant problems.

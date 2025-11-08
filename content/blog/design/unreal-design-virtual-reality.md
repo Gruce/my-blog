@@ -7,6 +7,11 @@ category: design
 series: "Design Science Series"
 seriesOrder: 4
 description: "Virtual reality and immersive technologies are reshaping design. Create virtual experiences that have real-world impact and meaning."
+sitemap:
+  loc: /unreal-design-virtual-reality
+  lastmod: 2025-10-14
+  changefreq: monthly
+  priority: 0.8
 ---
 
 The boundary between the real and the virtual is blurring. Virtual reality, augmented reality, and other immersive technologies are creating new possibilities for design that go beyond traditional physical constraints.

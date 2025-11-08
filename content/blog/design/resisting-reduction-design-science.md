@@ -7,6 +7,11 @@ category: design
 series: "Design Science Series"
 seriesOrder: 1
 description: "Complex systems can't be broken into parts. They must be understood as whole systems where everything connects."
+sitemap:
+  loc: /resisting-reduction-design-science
+  lastmod: 2025-10-14
+  changefreq: monthly
+  priority: 0.8
 ---
 
 Traditional design breaks problems into parts. Solve each part, solve the whole. This works for simple systems. It fails for complex ones.

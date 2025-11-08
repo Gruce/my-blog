@@ -7,6 +7,11 @@ category: design
 series: "Design Science Series"
 seriesOrder: 6
 description: "Design systems that evolve gracefully over time remain relevant and useful as technology and user needs change."
+sitemap:
+  loc: /design-systems-that-age-well
+  lastmod: 2025-10-14
+  changefreq: monthly
+  priority: 0.8
 ---
 
 Most design systems are built for the present moment. They're optimized for current technology, user needs, and business requirements. But what if we designed systems that could evolve and adapt over time?

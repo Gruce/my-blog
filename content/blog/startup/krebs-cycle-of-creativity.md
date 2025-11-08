@@ -5,6 +5,11 @@ tags: [creativity, design, innovation, process]
 image: /2025-cerbs-cycle/krebs-cycle-of-creativity.jpg
 category: startup
 description: "Creativity isn't random inspiration—it's a systematic process. Neri Oxman's Krebs Cycle of Creativity provides a framework for breakthrough innovation."
+sitemap:
+  loc: /krebs-cycle-of-creativity
+  lastmod: 2025-10-24
+  changefreq: monthly
+  priority: 0.8
 ---
 
 Creativity isn't random inspiration—it's a systematic process that can be understood, optimized, and mastered. Neri Oxman's "Krebs Cycle of Creativity" provides a framework for navigating the complex interplay between art, science, engineering, and design to unlock breakthrough innovation.

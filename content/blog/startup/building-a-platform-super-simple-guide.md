@@ -5,6 +5,11 @@ tags: [startup, platform, strategy]
 image: /og/building-a-platform-young-founders.png
 category: startup
 description: "A platform is like a playground you build, where many people can come to play together. When more people join, the playground gets better for everyone."
+sitemap:
+  loc: /building-a-platform-super-simple-guide
+  lastmod: 2025-09-13
+  changefreq: monthly
+  priority: 0.8
 ---
 
 A platform is like a playground you build, where many people can come to play together—makers and users, buyers and sellers, drivers and riders. Your job is to make the rules fair, the tools helpful, and the place safe and fun. When more people join, the playground gets better for everyone.

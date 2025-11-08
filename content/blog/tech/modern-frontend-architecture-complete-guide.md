@@ -4,6 +4,11 @@ title: "Frontend Architecture"
 tags: [frontend, architecture, scalability]
 category: tech
 description: "Frontend architecture is the art of managing complexity without leaking it to users. Design systems that scale with your team, your users, and your business requirements."
+sitemap:
+  loc: /modern-frontend-architecture-complete-guide
+  lastmod: 2025-10-05
+  changefreq: monthly
+  priority: 0.9
 ---
 
 The frontend landscape has evolved dramatically. What worked for a team of three developers building a simple dashboard now breaks down when you're shipping features across multiple teams, handling millions of users, and maintaining codebases that span years of development.

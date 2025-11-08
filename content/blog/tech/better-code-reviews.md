@@ -4,6 +4,11 @@ title: "Better Code Reviews"
 tags: [process, reviews, collaboration, quality, teams]
 category: tech
 description: "Code reviews are the heartbeat of software quality. Learn how to build better software through effective collaboration while maintaining team velocity and psychological safety."
+sitemap:
+  loc: /better-code-reviews
+  lastmod: 2025-07-20
+  changefreq: monthly
+  priority: 0.8
 ---
 
 Code reviews are the heartbeat of software quality. They're where knowledge spreads, bugs are caught, and architectural decisions are validated. But too often, they become a bottleneck that slows teams down and creates friction between developers.

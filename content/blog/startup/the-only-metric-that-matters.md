@@ -5,6 +5,11 @@ tags: [startup, metrics, growth, product]
 image: /og/the-only-metric-that-matters.png
 category: startup
 description: "Most metrics are distractions. There's only one question that matters: Are people actually using your product?"
+sitemap:
+  loc: /the-only-metric-that-matters
+  lastmod: 2025-10-18
+  changefreq: monthly
+  priority: 0.8
 ---
 
 Most startups track too many numbers. Downloads, page views, sign-ups, revenue. But there's really only one question that matters: **Are people actually using your product?**

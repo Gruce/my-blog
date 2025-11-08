@@ -5,6 +5,11 @@ tags: [design, ai, copilot]
 image: /og/designing-ai-copilot-interfaces.png
 category: design
 description: "Great copilots don't just answer questions—they accelerate judgment. Principles, patterns, and implementation for high-trust, high-utility assistants."
+sitemap:
+  loc: /designing-ai-copilot-interfaces
+  lastmod: 2025-10-14
+  changefreq: monthly
+  priority: 0.8
 ---
 
 Great copilots don't just answer questions—they accelerate judgment. Most attempts bolt a chat box onto existing products. The result is novelty without reliability.

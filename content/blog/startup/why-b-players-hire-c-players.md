@@ -5,6 +5,11 @@ tags: [hiring, leadership, teams, culture]
 image: /og/why-b-players-hire-c-players.png
 category: startup
 description: "Steve Jobs said A-players hire A-players, and B-players hire C-players. The deeper truth: it's not about competence—it's about fear."
+sitemap:
+  loc: /why-b-players-hire-c-players
+  lastmod: 2025-10-25
+  changefreq: monthly
+  priority: 0.8
 ---
 
 Steve Jobs once said that A-players hire A-players, and B-players hire C-players. It's one of the most quoted insights in Silicon Valley, but few people understand the deeper psychology behind why this happens.

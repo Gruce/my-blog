@@ -7,6 +7,11 @@ category: design
 series: "Design Science Series"
 seriesOrder: 7
 description: "Typography guides attention. It creates clear paths through text and helps readers focus on what matters most."
+sitemap:
+  loc: /typography-for-focus
+  lastmod: 2025-10-14
+  changefreq: monthly
+  priority: 0.8
 ---
 
 Typography is more than choosing fonts. It's about creating visual hierarchies that guide the eye and help readers focus on what matters most.

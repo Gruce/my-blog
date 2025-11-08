@@ -7,6 +7,11 @@ category: design
 series: "Design Science Series"
 seriesOrder: 2
 description: "Success comes from mutual benefit, not individual optimization. Create symbiotic systems that thrive through interdependence."
+sitemap:
+  loc: /holobiont-design-symbiotic-systems
+  lastmod: 2025-10-14
+  changefreq: monthly
+  priority: 0.8
 ---
 
 Most design optimizes for one thing. The product. The user. The business. But nature doesn't work that way. In biological systems, success comes from mutual benefit, not individual optimization.

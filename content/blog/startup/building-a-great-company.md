@@ -5,6 +5,11 @@ tags: [startup, teams, strategy]
 image: /og/building-a-great-company.png
 category: startup
 description: "Building a great company requires three things: a clear plan, good people who can work on their own, and a way to keep everything running smoothly."
+sitemap:
+  loc: /building-a-great-company
+  lastmod: 2025-09-09
+  changefreq: monthly
+  priority: 0.8
 ---
 
 Building a great company is like building a great team. You need three things: a clear plan, good people who can work on their own, and a way to keep everything running smoothly.

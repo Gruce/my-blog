@@ -7,6 +7,11 @@ category: design
 series: "Design Science Series"
 seriesOrder: 5
 description: "The intersection of design and science is a fertile ground for exploration and discovery."
+sitemap:
+  loc: /essays-exploration-design-science
+  lastmod: 2025-10-14
+  changefreq: monthly
+  priority: 0.8
 ---
 
 The intersection of design and science is a fertile ground for exploration. The Journal of Design and Science at MIT Media Lab explores this intersection through their "Essays in Exploration" theme, which focuses on the art of design science research and methods for pushing boundaries and discovering new possibilities.

@@ -4,6 +4,11 @@ title: "Building with AI"
 tags: [ai, teams, workflow, productivity]
 category: tech
 description: "Master the art of human-AI collaboration in software development. Learn proven frameworks and practical strategies for leveraging AI as your coding partner."
+sitemap:
+  loc: /building-with-ai-partner
+  lastmod: 2025-06-06
+  changefreq: monthly
+  priority: 0.9
 ---
 
 AI is changing how we build software. It's not about replacing developers—it's about augmenting them. When done right, AI becomes a powerful partner that helps you build better software faster.

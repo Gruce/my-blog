@@ -5,6 +5,11 @@ tags: [startup, okrs, goals]
 image: /og/okrs-simple-guide.png
 category: startup
 description: "Set clear goals, measure progress, and win together. A simple guide to OKRs for startups."
+sitemap:
+  loc: /okrs-simple-guide-for-startups
+  lastmod: 2025-10-03
+  changefreq: monthly
+  priority: 0.8
 ---
 
 OKRs help you focus on what matters most. They help you say "no" to distractions. They help you work together as one team. They help you celebrate progress, even if you aren't perfect.

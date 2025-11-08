@@ -5,6 +5,11 @@ tags: [startup, university, teams]
 image: /og/building-tech-team-university.png
 category: startup
 description: "University is the perfect time to build a tech team. You're surrounded by smart people, have access to resources, and can make mistakes without losing everything."
+sitemap:
+  loc: /building-tech-team-in-university
+  lastmod: 2025-10-15
+  changefreq: monthly
+  priority: 0.8
 ---
 
 Building a tech team in university is like having a practice field before the real game. You're surrounded by smart people, have access to resources, and can make mistakes without losing everything. It's the perfect time to learn how to lead, build, and ship real products.

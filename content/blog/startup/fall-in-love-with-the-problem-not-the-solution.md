@@ -5,6 +5,11 @@ tags: [startup, problem-solving, entrepreneurship, product]
 image: /og/fall-in-love-with-problem-not-solution.png
 category: startup
 description: "Successful entrepreneurs focus on problems, not solutions. Fall in love with the problem first, then find the best solution."
+sitemap:
+  loc: /fall-in-love-with-the-problem-not-the-solution
+  lastmod: 2025-10-21
+  changefreq: monthly
+  priority: 0.8
 ---
 
 Most entrepreneurs start with an idea for a product. They fall in love with their solution and try to convince people to use it. This is backwards.
