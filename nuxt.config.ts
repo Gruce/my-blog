@@ -2,12 +2,18 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
+  experimental: {
+    viewTransition: true
+  },
   modules: ['@nuxt/fonts', '@nuxtjs/tailwindcss', '@nuxt/icon', '@nuxtjs/robots', 'nuxt-llms', '@nuxtjs/sitemap', '@nuxt/content', 'nuxt-gtag'],
   runtimeConfig: {
     public: {
       siteUrl: 'https://gruceing.dev'
     }
   },
+  // app: {
+  //   keepalive: true
+  // },
   robots: {
     groups: [{ userAgent: '*', allow: '/' }]
   },

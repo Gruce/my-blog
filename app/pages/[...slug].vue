@@ -5,6 +5,7 @@ import type { PostItem } from '~/composables/types'
 import { useReadingTime } from '~/composables/useReadingTime'
 import { useArticleSeries } from '~/composables/useArticleSeries'
 import type { BlogCategory } from '~/composables/types'
+import { BLOG_CATEGORY_NAMES } from '~/composables/types'
 
 const route = useRoute()
 const { data: page } = await useAsyncData(`page-${route.path}`, () => {
@@ -32,8 +33,8 @@ const { data: posts } = await useAsyncData<PostItem[]>('blog-sidebar', async () 
     }
     // If path has 2 parts and first part looks like a series folder
     else if (relevantParts.length === 2 && relevantParts[0] && relevantParts[0].includes('-')) {
-      const categoryNames = ['design', 'tech', 'startup', 'events']
-      if (!categoryNames.includes(relevantParts[0])) {
+      // Use single source of truth for category names
+      if (!BLOG_CATEGORY_NAMES.includes(relevantParts[0])) {
         seriesFromFolder = relevantParts[0]
       }
     }

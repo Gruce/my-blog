@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col">
-    <div class="flex flex-col max-w-xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 w-full">
+    <div class="flex flex-col max-w-xl mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-4 w-full">
       <header>
         <div class="flex items-center gap-2 sm:gap-4 mb-6">
           <img 
@@ -35,6 +35,7 @@
 <script setup lang="ts">
 import { useBlogSections } from '~/composables/useBlogSections'
 import type { PostItem, BlogCategory } from '~/composables/types'
+import { BLOG_CATEGORY_NAMES } from '~/composables/types'
 
 // SEO meta tags for homepage
 useSeoMeta({
@@ -66,8 +67,8 @@ const { data: posts } = await useAsyncData<PostItem[]>('blog', async () => {
     }
     // If path has 2 parts and first part looks like a series folder
     else if (relevantParts.length === 2 && relevantParts[0] && relevantParts[0].includes('-')) {
-      const categoryNames = ['design', 'tech', 'startup', 'events']
-      if (!categoryNames.includes(relevantParts[0])) {
+      // Use single source of truth for category names
+      if (!BLOG_CATEGORY_NAMES.includes(relevantParts[0])) {
         seriesFromFolder = relevantParts[0]
       }
     }

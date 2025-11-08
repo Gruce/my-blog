@@ -1,19 +1,13 @@
 /**
  * Shared types for blog content organization
+ * Categories are defined in constants/blog-categories.ts (single source of truth)
  */
 
-export type BlogCategory = 'tech' | 'design' | 'events' | 'startup'
+// Re-export from single source of truth
+export type { BlogCategory } from '../../constants/blog-categories'
+export { BLOG_CATEGORIES, BLOG_CATEGORY_TITLES, BLOG_CATEGORY_NAMES } from '../../constants/blog-categories'
 
 export type BlogCategoryKey = BlogCategory
-
-export const BLOG_CATEGORIES: BlogCategory[] = ['startup', 'tech', 'design', 'events'] as const
-
-export const BLOG_CATEGORY_TITLES: Record<BlogCategory, string> = {
-  tech: 'Engineering',
-  design: 'Design',
-  events: 'Events & Workshops',
-  startup: 'Startups'
-} as const
 
 export type PostItem = {
   id: string

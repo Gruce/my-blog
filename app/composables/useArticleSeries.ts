@@ -1,4 +1,5 @@
 import { computed, type Ref } from 'vue'
+import { BLOG_CATEGORY_NAMES } from './types'
 
 export type SeriesArticle = {
   id: string
@@ -28,8 +29,8 @@ function getSeriesFromPost(post: any): string | null {
   
   // If path has 2 parts and first part looks like a series folder
   if (pathParts.length === 2 && pathParts[0] && pathParts[0].includes('-')) {
-    const categoryNames = ['design', 'tech', 'startup', 'events']
-    if (!categoryNames.includes(pathParts[0])) {
+    // Use single source of truth for category names
+    if (!BLOG_CATEGORY_NAMES.includes(pathParts[0])) {
       const folderName = pathParts[0]
       return folderName.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
     }

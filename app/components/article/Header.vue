@@ -44,8 +44,8 @@
     <header class="mb-4">
       <!-- Title -->
       <div class="flex flex-col">
-        <div v-if="pageSeries" class="text-xs sm:text-sm text-zinc-500 font-normal mb-1">
-          {{ pageSeries }}
+        <div v-if="parentFolderName" class="text-xs sm:text-sm text-zinc-500 font-normal mb-1">
+          {{ parentFolderName }}
         </div>
         <h1 class="text-xl sm:text-xl md:text-2xl font-medium tracking-tight text-white/95 leading-tight">
           <span v-if="page.seriesOrder" class="text-zinc-500 font-normal mr-2">{{ page.seriesOrder }}.</span>
@@ -79,19 +79,36 @@ const headerNameClassValue = computed(() => props.headerNameClass ? toValue(prop
 const headerSubtitleClassValue = computed(() => props.headerSubtitleClass ? toValue(props.headerSubtitleClass) : '')
 
 /**
- * Get series name from page (explicit or from folder structure)
+ * Get all nested parent folder names from path
+ * For path like /dudes-studio/core-services/web-mobile-development, returns "Dudes Studio > Core Services"
+ * For path like /design/design-science-series/article, returns "Design > Design Science Series"
+ * For path like /tech/article, returns "Tech"
  */
-const pageSeries = computed(() => {
-  if (props.page?.series) return props.page.series
-  
-  // Detect from folder structure
+const parentFolderName = computed(() => {
   const path = props.page?.path || ''
-  const pathParts = path.replace(/^\/|\/$/g, '').split('/')
-  if (pathParts.length > 2) {
-    const folderName = pathParts[1]
-    return folderName.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
+  if (!path) return null
+  
+  // Remove leading/trailing slashes and split
+  const pathParts = path.replace(/^\/|\/$/g, '').split('/').filter((p: string) => p.length > 0)
+  
+  // Skip 'blog' prefix if present
+  const startIndex = pathParts[0] === 'blog' ? 1 : 0
+  const relevantParts = pathParts.slice(startIndex)
+  
+  // Get all parent folders (all parts except the last one, which is the filename)
+  if (relevantParts.length >= 2) {
+    // Get all parts except the last one (filename)
+    const parentFolders = relevantParts.slice(0, -1)
+    
+    // Convert each folder name to readable format and join with separator
+    const readableFolders = parentFolders.map((folder: string) => {
+      return folder.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
+    })
+    
+    return readableFolders.join(' > ')
   }
   
+  // If we only have 1 part, there's no parent folder to show
   return null
 })
 

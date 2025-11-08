@@ -1,6 +1,6 @@
 import { computed, type Ref, type ComputedRef } from 'vue'
 import type { BlogCategory, PostItem, SeriesGroup, Group } from './types'
-import { BLOG_CATEGORIES, BLOG_CATEGORY_TITLES } from './types'
+import { BLOG_CATEGORIES, BLOG_CATEGORY_TITLES, BLOG_CATEGORY_NAMES } from './types'
 
 /**
  * Extract series folder from path
@@ -27,9 +27,8 @@ function getSeriesFolderFromPath(path: string): string | null {
   // If we have 2 parts and first part looks like a series folder (contains hyphens)
   // This handles cases where Nuxt Content strips the category from the path
   if (relevantParts.length === 2 && relevantParts[0] && relevantParts[0].includes('-')) {
-    // Check if it's not a category name (categories are single words: design, tech, startup, events)
-    const categoryNames = ['design', 'tech', 'startup', 'events']
-    if (!categoryNames.includes(relevantParts[0])) {
+    // Check if it's not a category name (use single source of truth)
+    if (!BLOG_CATEGORY_NAMES.includes(relevantParts[0])) {
       return relevantParts[0] // Return the folder name
     }
   }
@@ -65,7 +64,8 @@ export function useBlogSections(
       tech: { key: 'tech', title: BLOG_CATEGORY_TITLES.tech, items: [] },
       design: { key: 'design', title: BLOG_CATEGORY_TITLES.design, items: [] },
       events: { key: 'events', title: BLOG_CATEGORY_TITLES.events, items: [] },
-      startup: { key: 'startup', title: BLOG_CATEGORY_TITLES.startup, items: [] }
+      startup: { key: 'startup', title: BLOG_CATEGORY_TITLES.startup, items: [] },
+      'dudes-studio': { key: 'dudes-studio', title: BLOG_CATEGORY_TITLES['dudes-studio'], items: [] }
     }
 
     // Group posts by category and series (from folder structure or series field)
