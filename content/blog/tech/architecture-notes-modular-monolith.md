@@ -3,117 +3,85 @@ date: 2025-07-15
 title: "Modular Monolith"
 tags: [architecture, monolith, modular]
 category: tech
-description: "A practical guide to building a modular monolith: clear boundaries, explicit interfaces, and a migration path that scales without premature microservices."
-sitemap:
-  loc: /architecture-notes-modular-monolith
-  lastmod: 2025-07-15
-  changefreq: monthly
-  priority: 0.8
+description: "Most systems start as monoliths. Good ones become modular. A practical guide to building a modular monolith that scales with your product and team."
 ---
 
 Most systems start as monoliths. Good ones become modular. The modular monolith offers a pragmatic middle path: a single deployable unit with clear internal boundaries, explicit contracts, and independent evolution of domains—without the operational overhead of distributed systems.
 
-This guide shows how to design, grow, and maintain a modular monolith that scales with your product and team. No hype, no premature microservices—just structure, discipline, and clarity.
-
-## Table of Contents
-
-1. [Why Modular Monoliths Work](#why-modular-monoliths-work)
-2. [Defining Strong Boundaries](#defining-strong-boundaries)
-3. [Module Anatomy](#module-anatomy)
-4. [Communication and Contracts](#communication-and-contracts)
-5. [Data Ownership and Access](#data-ownership-and-access)
-6. [Coupling, Cohesion, and Change](#coupling-cohesion-and-change)
-7. [Operational Discipline](#operational-discipline)
-8. [When to Split (and When Not To)](#when-to-split-and-when-not-to)
-9. [Migration Playbook](#migration-playbook)
-10. [Common Pitfalls](#common-pitfalls)
-11. [Checklists and Practices](#checklists-and-practices)
-
 ## Why Modular Monoliths Work
 
-- **Speed with safety**: One deployable artifact, fast local dev, easy end‑to‑end testing
-- **Clear boundaries**: Structure the system around business domains, not layers
-- **Evolvable design**: Modules can change independently behind stable interfaces
-- **Operational simplicity**: Avoid early network/distribution complexity
+Modular monoliths work because they provide:
+
+- **Clear boundaries**: Modules have clear boundaries and explicit contracts.
+
+- **Independent evolution**: Modules can evolve independently without affecting others.
+
+- **Simpler operations**: Single deployable unit means simpler deployment and operations.
+
+- **Better performance**: No network calls between modules means better performance.
+
+- **Easier testing**: Easier to test than distributed systems.
 
 ## Defining Strong Boundaries
 
-Boundaries are your first architecture decision.
-- **Domain-first**: Organize around business capabilities (e.g., Billing, Catalog, Identity)
-- **Encapsulation**: Hide internal types and logic; export only what clients need
-- **No cross-reach**: Modules don’t poke into each other’s internals—ever
-- **Explicit access**: Interaction happens via narrow, documented contracts
+Strong boundaries are the foundation of a modular monolith. Each module should:
+
+- Have a clear purpose
+- Have explicit interfaces
+- Own its data
+- Be independently testable
+
+The key is to make boundaries explicit and enforce them through code structure, not just documentation.
 
 ## Module Anatomy
 
-Each module should be self-contained with:
-- **Public API**: The only entry points consumers can call
-- **Internal Logic**: Use cases, policies, validations, mappers
-- **Data Layer**: Persistence that belongs to the module
-- **Events**: Outbox of domain events the module publishes
-- **Configuration**: Module-scoped config, feature flags, and defaults
+A well-designed module has:
+
+- **Public API**: Clear interface that other modules can use.
+
+- **Internal implementation**: Implementation details that are hidden from other modules.
+
+- **Data ownership**: Owns its data and provides access through its API.
+
+- **Tests**: Comprehensive tests that verify its behavior.
 
 ## Communication and Contracts
 
-Prefer simple, explicit contracts.
-- **Synchronous calls** only through the public API
-- **Asynchronous collaboration** via domain events when decoupling is needed
-- **Versioning** of contracts to evolve without breaking consumers
-- **Documentation** that explains intent, invariants, and error cases
+Modules communicate through explicit contracts. These contracts define:
+
+- What data is exchanged
+- What operations are available
+- What errors can occur
+- What guarantees are provided
+
+The key is to make contracts explicit and stable. Changes to contracts should be intentional and well-communicated.
 
 ## Data Ownership and Access
 
-- **Owned data**: Each module owns its tables/collections and enforces invariants
-- **Read models**: Other modules read via APIs, views, or replicated projections
-- **No shared write access**: Cross-module writes violate ownership and invariants
-- **Migrations**: Owned by the module; coordinated through release notes
+Each module should own its data. Other modules should access this data through the module's API, not directly.
 
-## Coupling, Cohesion, and Change
+This provides:
 
-Design for change where change actually happens.
-- **High cohesion**: Related policies and behaviors live together
-- **Low coupling**: Minimize knowledge of other modules’ internals
-- **Change heatmaps**: Track files that change together to reveal hidden seams
-- **Churn-based refactors**: Move code to reduce cross-module edits
+- **Encapsulation**: Implementation details are hidden.
 
-## Operational Discipline
+- **Flexibility**: Modules can change their internal structure without affecting others.
 
-- **Testing strategy**: Heavy module-level tests; a few end‑to‑end smoke paths
-- **Release notes**: Record interface changes per module
-- **Observability**: Logs, metrics, and traces tagged by module/domain
-- **Ownership**: Clear owners for each module; docs live with the code
+- **Consistency**: All access goes through the same interface, ensuring consistency.
 
-## When to Split (and When Not To)
+## When to Split
 
-Split when the seams are obvious, not when it’s trendy.
-- **Split when**: A module has independent scaling needs, isolated failure domains, or different release cadences
-- **Don’t split because**: “Microservices are cool,” a blog post said so, or to fix team communication
-- **Preconditions to split**: Stable contracts, low coupling, clear ownership, observability in place
+Split a module into a separate service when:
 
-## Migration Playbook
+- **Different scaling needs**: Module needs to scale independently.
 
-When a split becomes necessary:
-1. Harden interfaces and remove accidental dependencies
-2. Externalize data access behind the module’s API
-3. Introduce async events for decoupled workflows
-4. Shadow the module as a separate process while calls still use in‑process API
-5. Flip traffic gradually; monitor, compare, and validate behavior
-6. Retire the in‑process module only when confidence is high
+- **Different deployment cadence**: Module needs to be deployed independently.
 
-## Common Pitfalls
+- **Different technology stack**: Module needs different technology.
 
-- **Leaky boundaries**: Importing internals “just this once” becomes forever
-- **Shared database tables**: The fastest way to erase ownership and invariants
-- **God modules**: Bloated “core” that everything depends on
-- **Layered coupling**: UI → Service → Repo repeating across domains instead of domain‑centric design
-- **Premature microservices**: Trading code complexity for operational complexity
+- **Team boundaries**: Module is owned by a different team.
 
-## Checklists and Practices
+Don't split prematurely. Start with a modular monolith and split when you have a clear reason.
 
-- **Boundary Checklist**: Clear owners, explicit API, hidden internals, documented invariants
-- **Dependency Hygiene**: Lint or reviews to block cross-module imports
-- **Change Review**: Reject PRs that add cross‑module knowledge without contracts
-- **Observability**: Per‑module metrics (latency, errors, throughput) and change logs
-- **Readme per Module**: Purpose, API, data ownership, events, maintainers
+## The Principle
 
-A modular monolith is not a halfway house; it’s an intentional architecture. Get the boundaries right, keep contracts tight, and let the code reveal when it’s time to split.
+Modular monoliths provide clear boundaries, independent evolution, and simpler operations without the overhead of distributed systems. Define strong boundaries, make contracts explicit, and own data within modules. Split to microservices only when you have a clear reason. Start simple, add structure as needed.

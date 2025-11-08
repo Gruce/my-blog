@@ -1,226 +1,79 @@
 ---
 date: 2025-10-15
-title: "Building a tech team while in university"
+title: "Building a Tech Team in University"
 tags: [startup, university, teams]
 image: /og/building-tech-team-university.png
 category: startup
-description: "How to build a tech team while studying computer science and why it's the best time to start."
+description: "University is the perfect time to build a tech team. You're surrounded by smart people, have access to resources, and can make mistakes without losing everything."
 ---
 
 Building a tech team in university is like having a practice field before the real game. You're surrounded by smart people, have access to resources, and can make mistakes without losing everything. It's the perfect time to learn how to lead, build, and ship real products.
 
-## Table of Contents
-
-1. [Why university is the perfect time](#why-university-is-the-perfect-time)
-2. [What makes a great tech team](#what-makes-a-great-tech-team)
-3. [How to find your first teammates](#how-to-find-your-first-teammates)
-4. [Building your first project together](#building-your-first-project-together)
-5. [Learning to lead and manage](#learning-to-lead-and-manage)
-6. [Common mistakes to avoid](#common-mistakes-to-avoid)
-7. [Turning your team into a startup](#turning-your-team-into-a-startup)
-8. [Your action plan](#your-action-plan)
-
-## Why university is the perfect time
+## Why University is the Perfect Time
 
 University gives you three superpowers for building a tech team:
 
-**1. Access to talent**
-- Smart classmates who are learning the same things
-- Different skill levels (freshmen to seniors)
-- People with different backgrounds and interests
-- No salary pressure - everyone is learning
+**Access to talent**: Smart classmates who are learning the same things. Different skill levels. People with different backgrounds and interests.
 
-**2. Low-risk environment**
-- No investors to disappoint
-- No customers to lose
-- No rent to pay
-- Perfect place to fail and learn
+**Low risk**: You can make mistakes without losing everything. You can try different approaches. You can learn what works and what doesn't.
 
-**3. Built-in resources**
-- Computer labs and equipment
-- Professors who can mentor
-- University events and competitions
-- Free or cheap software licenses
+**Resources**: Access to libraries, labs, professors, and other resources. You can learn from experts. You can get feedback on your work.
 
-## What makes a great tech team
+## What Makes a Great Tech Team
 
-A great tech team has three types of people:
+A great tech team has three things:
 
-**The Builder** (usually you)
-- Writes code and builds features
-- Understands the technical side
-- Can explain technical concepts simply
-- Learns new technologies quickly
+1. **Complementary skills**: People who can do different things. Frontend, backend, design, product. Each person brings something different.
 
-**The Designer**
-- Makes things look good and work well
-- Understands what users want
-- Can create mockups and prototypes
-- Thinks about user experience
+2. **Shared vision**: Everyone understands what you're trying to build and why. They're aligned on the goal.
 
-**The Hustler**
-- Talks to people and finds opportunities
-- Understands business and marketing
-- Can sell ideas and get feedback
-- Connects the team with the outside world
+3. **Trust**: People trust each other. They can work together without micromanagement. They can disagree and still move forward.
 
-You don't need all three people to start, but you need all three skills. One person can wear multiple hats at first.
+## How to Find Your First Teammates
 
-## How to find your first teammates
+Start with your classmates. Look for people who are:
 
-Start small and look in these places:
+- Curious and eager to learn
+- Reliable and committed
+- Good at what they do
+- Fun to work with
 
-**In your classes:**
-- Sit next to people who ask good questions
-- Join study groups and coding clubs
-- Look for people who finish assignments early
-- Find classmates who help others
+Don't just look for the smartest people. Look for people who are reliable, curious, and fun to work with.
 
-**At university events:**
-- Hackathons and coding competitions
-- Tech talks and workshops
-- Career fairs and networking events
-- Student organization meetings
+## Building Your First Project Together
 
-**Online:**
-- University Discord/Slack channels
-- Reddit communities for your school
-- LinkedIn groups for students
-- GitHub repositories from classmates
+Start with a small project. Something you can build in a few weeks. Something that solves a real problem.
 
-**What to look for:**
-- People who show up on time
-- People who finish what they start
-- People who ask "why" not just "how"
-- People who are excited about building things
+The key is to ship something. Don't try to build the perfect product. Build something that works, then improve it based on feedback.
 
-## Building your first project together
+## Learning to Lead and Manage
 
-Start with something simple that solves a real problem:
+Leading a tech team is about:
 
-**Good first projects:**
-- A website for a student club
-- A mobile app for campus events
-- A tool that helps with homework
-- A platform for students to share notes
+- Setting clear goals
+- Removing obstacles
+- Making decisions
+- Keeping everyone aligned
 
-**How to start:**
-1. **Pick one problem** that you and your friends face
-2. **Build a simple version** in 2-4 weeks
-3. **Show it to other students** and get feedback
-4. **Improve it based on what you learn**
-5. **Repeat until people actually use it**
+You don't need to be the best programmer. You need to be able to help the team work together and achieve their goals.
 
-**Key rules:**
-- Ship something every week, even if it's small
-- Get feedback from real users (other students)
-- Don't try to build everything at once
-- Focus on one feature that works really well
+## Common Mistakes to Avoid
 
-## Learning to lead and manage
+- Trying to do everything yourself
+- Not communicating clearly
+- Not setting clear goals
+- Not shipping early and often
+- Not learning from mistakes
 
-Leading a tech team means helping everyone do their best work:
+## Turning Your Team into a Startup
 
-**Set clear goals:**
-- What are you building?
-- Why are you building it?
-- When do you want to finish?
-- How will you know if it's working?
+If your team works well together and you've built something people want, you might have a startup. The key is to:
 
-**Have regular check-ins:**
-- Meet once a week for 30 minutes
-- Share what you finished last week
-- Say what you'll work on this week
-- Ask for help when you're stuck
+- Validate that people want what you've built
+- Figure out how to make money
+- Build a sustainable business model
+- Scale the team as you grow
 
-**Make decisions quickly:**
-- Don't debate forever
-- Pick one option and try it
-- Change it later if it doesn't work
-- Learn from every decision
+## The Principle
 
-**Give credit and take responsibility:**
-- Celebrate when things go well
-- Take the blame when things go wrong
-- Help people learn from mistakes
-- Always say thank you
-
-## Common mistakes to avoid
-
-**Mistake 1: Trying to build the next Facebook**
-- Start small and simple
-- Solve one problem really well
-- Don't worry about being the next big thing
-
-**Mistake 2: Not talking to users**
-- Build for real people with real problems
-- Ask for feedback early and often
-- Don't assume you know what people want
-
-**Mistake 3: Not shipping anything**
-- Perfect is the enemy of good
-- Ship something that works, even if it's basic
-- You can always make it better later
-
-**Mistake 4: Not learning from failures**
-- Things will go wrong
-- That's how you learn
-- Write down what went wrong and why
-- Don't make the same mistake twice
-
-## Turning your team into a startup
-
-If your project is working and people are using it, you might have a real business:
-
-**Signs you're ready:**
-- People ask for new features
-- Users tell their friends about it
-- You can't keep up with demand
-- People offer to pay for it
-
-**Next steps:**
-1. **Talk to potential customers** - understand what they'll pay for
-2. **Build a business model** - how will you make money?
-3. **Find mentors** - professors, alumni, or local entrepreneurs
-4. **Apply to accelerators** - programs that help student startups
-5. **Raise money** - if you need it to grow faster
-
-**Remember:**
-- Most student projects don't become companies, and that's okay
-- The skills you learn are valuable even if the project fails
-- You can always start another project
-- The team you build is more important than any single idea
-
-## Your action plan
-
-**Week 1-2: Find your first teammate**
-- Look for someone in your classes or clubs
-- Start a conversation about building something together
-- Pick a simple project to work on
-
-**Week 3-4: Build your first version**
-- Keep it simple and focused
-- Ship something that works
-- Get feedback from other students
-
-**Week 5-8: Improve and grow**
-- Add one new feature based on feedback
-- Find a third teammate if you need more skills
-- Start talking to potential users
-
-**Month 3+: Scale or pivot**
-- If people love it, keep building
-- If not, try a different idea
-- Focus on learning and having fun
-
-**Key questions to ask yourself:**
-- Are we solving a real problem?
-- Do people actually use what we built?
-- Are we learning new skills?
-- Are we having fun working together?
-
----
-
-Building a tech team in university is one of the best things you can do for your career. You'll learn how to lead, how to build, and how to work with others. Even if your project doesn't become the next big thing, you'll have skills and relationships that last a lifetime.
-
-Start small, ship often, and don't be afraid to fail. The best time to build a tech team is now, while you're still in school.
+University is the perfect time to build a tech team. You're surrounded by smart people, have access to resources, and can make mistakes without losing everything. Start with a small project. Ship something. Learn from feedback. If it works, you might have a startup.

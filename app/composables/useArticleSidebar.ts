@@ -2,6 +2,10 @@ import { ref, computed, reactive, watch, watchEffect, onMounted, onUnmounted, ne
 import { useBlogSections } from '~/composables/useBlogSections'
 import type { BlogCategory, PostItem } from '~/composables/types'
 
+// Persistent dimming state across navigation (module-level)
+let persistentSidebarDimmed = true
+let persistentIsInitialLoad = true
+
 export function useArticleSidebar(posts: Ref<PostItem[] | undefined> | ComputedRef<PostItem[]>, currentPath: string) {
   // Track expanded state
   const expandedSections = reactive<Record<string, boolean>>({})
@@ -11,10 +15,10 @@ export function useArticleSidebar(posts: Ref<PostItem[] | undefined> | ComputedR
   const sidebarOpen = ref(false)
   const sidebarScrollRef = ref<HTMLElement>()
   
-  // Sidebar dimming
-  const sidebarDimmed = ref(true)
+  // Sidebar dimming - use persistent state
+  const sidebarDimmed = ref(persistentSidebarDimmed)
   let dimTimeout: ReturnType<typeof setTimeout> | null = null
-  let isInitialLoad = ref(true)
+  let isInitialLoad = ref(persistentIsInitialLoad)
   
   // Client state
   const isClient = ref(false)
@@ -125,10 +129,12 @@ export function useArticleSidebar(posts: Ref<PostItem[] | undefined> | ComputedR
       if (isInitialLoad.value) {
         setTimeout(() => {
           isInitialLoad.value = false
+          persistentIsInitialLoad = false
         }, 100)
         return
       }
       sidebarDimmed.value = false
+      persistentSidebarDimmed = false
       if (dimTimeout) {
         clearTimeout(dimTimeout)
         dimTimeout = null
@@ -143,6 +149,7 @@ export function useArticleSidebar(posts: Ref<PostItem[] | undefined> | ComputedR
       }
       dimTimeout = setTimeout(() => {
         sidebarDimmed.value = true
+        persistentSidebarDimmed = true
       }, 2000)
     }
   }
@@ -209,19 +216,24 @@ export function useArticleSidebar(posts: Ref<PostItem[] | undefined> | ComputedR
   // Mount setup
   onMounted(() => {
     isClient.value = true
-    sidebarDimmed.value = true
+    // Restore persistent dimming state instead of resetting
+    sidebarDimmed.value = persistentSidebarDimmed
     windowWidth.value = window.innerWidth
 
-    nextTick(() => {
-      sidebarDimmed.value = true
-      if (windowWidth.value >= 1024) {
+    // Only set initial load state if it's truly the first load
+    if (persistentIsInitialLoad) {
+      nextTick(() => {
         sidebarDimmed.value = true
-      }
-    })
+        persistentSidebarDimmed = true
+      })
 
-    setTimeout(() => {
+      setTimeout(() => {
+        isInitialLoad.value = false
+        persistentIsInitialLoad = false
+      }, 500)
+    } else {
       isInitialLoad.value = false
-    }, 500)
+    }
 
     const handleResize = () => {
       windowWidth.value = window.innerWidth

@@ -4,10 +4,10 @@ title: "AI Copilots"
 tags: [design, ai, copilot]
 image: /og/designing-ai-copilot-interfaces.png
 category: design
-description: "A practical guide to AI copilot UX: principles, patterns, prompts, safety, and implementation for high-trust, high-utility assistants."
+description: "Great copilots don't just answer questions—they accelerate judgment. Principles, patterns, and implementation for high-trust, high-utility assistants."
 ---
 
-Great copilots don't just answer questions—they accelerate judgment. Most attempts bolt a chat box onto existing products. The result is novelty without reliability. This guide distills years of building AI-augmented tools into concrete patterns for interfaces that feel helpful, honest, and fast—without pretending to be human.
+Great copilots don't just answer questions—they accelerate judgment. Most attempts bolt a chat box onto existing products. The result is novelty without reliability.
 
 ## Why Copilots Need Different UX
 
@@ -35,21 +35,7 @@ Designing for these realities demands explicit patterns for truth, provenance, a
 
 Move from free-form chat to job-centric flows: diagnose → propose → preview → apply → verify. Represent jobs as first-class objects, not just messages.
 
-```json
-{
-  "jobId": "rename-components-2025-10-14",
-  "goal": "Standardize button naming across repo",
-  "inputs": { "paths": ["src/components"], "style": "BEM" },
-  "plan": [
-    { "step": "analysis", "status": "done" },
-    { "step": "proposal", "status": "ready" },
-    { "step": "apply", "status": "pending", "requires": ["consent"] }
-  ],
-  "preview": { "diffs": 12, "risk": "low" }
-}
-```
-
-## Information Architecture for Copilots
+## Information Architecture
 
 Structure the surface into three persistent zones:
 
@@ -63,19 +49,6 @@ This mirrors how people decide: intent → option → evidence.
 
 Design prompts as composable UI rather than raw text. Use chips, pickers, and examples. Keep free text, but augment it with structured context.
 
-```json
-{
-  "system": "You assist with product design decisions. Be concise and cite sources.",
-  "context": {
-    "project": "Nebula",
-    "docs": ["/design/typography.md", "/research/latency-study.pdf"],
-    "constraints": ["mobile-first", "AA contrast"],
-    "tone": "direct"
-  },
-  "user": "Draft microcopy for the empty state of the Reports page."
-}
-```
-
 Pair this with UI primitives: context chips, constraint toggles, and reusable prompt templates.
 
 ## Grounding, Tools, and Authority
@@ -85,16 +58,6 @@ Copilots gain reliability by grounding in your data and tools. Explicitly disclo
 - What it knows (indexes, docs, scopes)
 - What it can do (tools, actions, side effects)
 - What it just did (logs, diffs, citations)
-
-```json
-{
-  "tools": [
-    { "name": "searchDesignRepo", "authority": "read", "latencyMs": 120 },
-    { "name": "openPullRequest", "authority": "write", "requiresConsent": true }
-  ],
-  "grounding": { "indexes": ["design-system", "release-notes-2024-2025"] }
-}
-```
 
 ## Uncertainty, Latency, and Transparency
 
@@ -108,31 +71,9 @@ Visualize confidence and progress instead of hiding it.
 
 Treat every output as a draft with quick affordances: "Refine", "Try alternative", "Explain", "Change constraints". Capture structured feedback for learning.
 
-```json
-{
-  "feedback": {
-    "kind": "revision",
-    "reason": "tone-too-formal",
-    "delta": {
-      "tone": "friendly",
-      "length": "shorter"
-    }
-  }
-}
-```
-
 ## Safety, Consent, and Data Boundaries
 
 Make boundaries visible and consent explicit. Use scoped sessions and ephemeral grants.
-
-```json
-{
-  "scopes": ["read:design-system", "read:analytics", "write:pull-requests"],
-  "grants": [
-    { "scope": "write:pull-requests", "status": "requested", "expiresAt": "2025-10-14T23:59:00Z" }
-  ]
-}
-```
 
 ## Interaction Patterns That Work
 
@@ -141,56 +82,6 @@ Make boundaries visible and consent explicit. Use scoped sessions and ephemeral 
 - Dual-mode: natural language plus structured controls.
 - Session summaries to maintain context across days.
 
-## Implementing with Design Tokens
-
-Unify AI surface patterns with tokens for state, confidence, and provenance.
-
-```json
-{
-  "color": {
-    "copilot": {
-      "bg": "#0B1020",
-      "rail": "#131A2A",
-      "evidence": "#93C5FD",
-      "danger": "#FCA5A5"
-    }
-  },
-  "opacity": { "confidence": { "low": 0.45, "med": 0.7, "high": 1 } },
-  "border": { "preview": { "width": 1, "style": "dashed" } }
-}
-```
-
-In CSS variables:
-
-```css
-:root {
-  --copilot-bg: #0B1020;
-  --copilot-rail: #131A2A;
-  --copilot-evidence: #93C5FD;
-  --copilot-danger: #FCA5A5;
-  --confidence-low: 0.45;
-  --confidence-med: 0.7;
-  --confidence-high: 1;
-}
-```
-
-## Instrumentation and Quality
-
-Quality is a product surface. Instrument for:
-
-- Task success rate (proposal accepted vs. edited vs. rejected)
-- Time-to-usable-preview
-- Clarification rate (how often it needs to ask)
-- Citation clickthrough (trust proxy)
-
-## Case Studies
-
-**Design review summarizer** that links to exact comments and diffs.
-
-**Token migration assistant** with previewable PRs and reversible changes.
-
-**Research synthesis** that outputs decision-ready briefs with citations.
-
 ## Common Pitfalls
 
 - Chat-only interfaces for non-chat jobs.
@@ -198,16 +89,6 @@ Quality is a product surface. Instrument for:
 - Vague prompts with no constraints or context.
 - Overclaiming confidence; no citations or alternatives.
 
-## Future-Proofing Your Copilot
-
-Design for model churn and new tools:
-
-- Separate plans, prompts, and UI from model specifics.
-- Keep authority gates and scopes independent of providers.
-- Store jobs and feedback as structured data for replay.
+## The Principle
 
 AI copilots change how people decide and execute. When you show your work, bound authority, and make correction cheap, they become trusted teammates—not inscrutable oracles. Start with job-centric flows, preview-first actions, and visible evidence, then refine with instrumentation.
-
----
-
-*Related: [Typography for Focus](./typography-for-focus.md), [Visual Hierarchy That Guides](./visual-hierarchy-that-guides.md)*
